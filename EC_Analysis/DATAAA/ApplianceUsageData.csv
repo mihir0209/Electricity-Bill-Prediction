@@ -1,0 +1,718 @@
+Appliance,Model,Wattage,Company,Months,Seasonal Usage
+AC,Daikin FTKF50TV 1.5 Ton Split AC,1450,Daikin,May-August,High
+AC,LG Dual Inverter AC 1 Ton,1000,LG,June-August,High
+AC,Samsung AR12NV5HLT 1 Ton Split AC,1250,Samsung,June-August,High
+AC,Voltas 1.5 Ton 3 Star Split AC,1350,Voltas,May-July,Medium
+AC,Hitachi 1 Ton 5 Star Inverter AC,1100,Hitachi,June-August,High
+AC,Carrier 1.5 Ton 3 Star Split AC,1400,Carrier,May-July,Medium
+AC,Blue Star 1.5 Ton Split AC,1300,Blue Star,May-August,Medium
+AC,Whirlpool 1 Ton 5 Star Inverter AC,1150,Whirlpool,June-August,High
+AC,Godrej 1.5 Ton 3 Star Split AC,1350,Godrej,May-June,Medium
+AC,Panasonic 1.5 Ton Inverter Split AC,1200,Panasonic,June-August,High
+AC,Mitsubishi Electric 1.5 Ton Split AC,1400,Mitsubishi,May-August,High
+AC,LG 2 Ton Dual Inverter AC,2000,LG,May-August,High
+AC,Daikin 2 Ton Inverter Split AC,1800,Daikin,June-August,High
+AC,Whirlpool 1.5 Ton Inverter AC,1250,Whirlpool,June-August,Medium
+AC,Samsung 2 Ton Inverter Split AC,1900,Samsung,May-July,High
+AC,Hitachi 1.5 Ton Inverter AC,1100,Hitachi,June-August,Medium
+AC,Panasonic 2 Ton Inverter AC,1850,Panasonic,May-August,High
+AC,Voltas 1 Ton Split AC,1000,Voltas,June-August,Medium
+AC,LG 1.5 Ton 5 Star Split AC,1350,LG,May-July,High
+AC,Blue Star 1 Ton Inverter AC,1200,Blue Star,June-August,Medium
+AC,Godrej 2 Ton Inverter AC,1850,Godrej,May-August,High
+AC,Carrier 1 Ton 5 Star Inverter AC,1150,Carrier,June-August,Medium
+AC,Mitsubishi 1.5 Ton Split AC,1300,Mitsubishi,May-July,High
+AC,Daikin 1.5 Ton 5 Star Split AC,1350,Daikin,June-August,Medium
+AC,Hitachi 1.5 Ton 3 Star AC,1250,Hitachi,May-July,Medium
+Desktop,Model 1,200,None,All Year,Low
+Desktop,Model 2,220,None,All Year,Low
+Desktop,Model 3,250,None,All Year,Medium
+Desktop,Model 4,300,None,All Year,Medium
+Desktop,Model 5,350,None,All Year,Medium
+Desktop,Model 6,400,None,All Year,High
+Desktop,Model 7,500,None,All Year,High
+Desktop,Model 8,250,None,All Year,Medium
+Desktop,Model 9,275,None,All Year,Medium
+Desktop,Model 10,225,None,All Year,Low
+Desktop,Model 11,230,None,All Year,Low
+Desktop,Model 12,280,None,All Year,Medium
+Desktop,Model 13,330,None,All Year,Medium
+Desktop,Model 14,450,None,All Year,High
+Desktop,Model 15,480,None,All Year,High
+Desktop,Model 16,350,None,All Year,Medium
+Desktop,Model 17,400,None,All Year,High
+Desktop,Model 18,290,None,All Year,Medium
+Desktop,Model 19,340,None,All Year,Medium
+Desktop,Model 20,600,None,All Year,High
+Desktop,Model 21,200,None,All Year,Low
+Desktop,Model 22,210,None,All Year,Low
+Desktop,Model 23,330,None,All Year,Medium
+Desktop,Model 24,300,None,All Year,Medium
+Desktop,Model 25,470,None,All Year,High
+Desktop,Model 26,500,None,All Year,High
+Desktop,Model 27,280,None,All Year,Medium
+Desktop,Model 28,550,None,All Year,High
+Desktop,Model 29,400,None,All Year,High
+Desktop,Model 30,310,None,All Year,Medium
+Desktop,Model 31,390,None,All Year,Medium
+Desktop,Model 32,270,None,All Year,Low
+Desktop,Model 33,450,None,All Year,High
+Desktop,Model 34,310,None,All Year,Medium
+Desktop,Model 35,360,None,All Year,Medium
+Desktop,Model 36,420,None,All Year,High
+Desktop,Model 37,380,None,All Year,Medium
+Desktop,Model 38,350,None,All Year,Medium
+Desktop,Model 39,550,None,All Year,High
+Desktop,Model 40,440,None,All Year,High
+Desktop,Model 41,600,None,All Year,High
+Desktop,Model 42,230,None,All Year,Low
+Desktop,Model 43,240,None,All Year,Low
+Desktop,Model 44,290,None,All Year,Medium
+Desktop,Model 45,320,None,All Year,Medium
+Desktop,Model 46,410,None,All Year,High
+Desktop,Model 47,460,None,All Year,High
+Desktop,Model 48,470,None,All Year,High
+Desktop,Model 49,300,None,All Year,Medium
+Desktop,Model 50,280,None,All Year,Medium
+Fridge,LG GL-T292RPZ3 Double Door Fridge,150,LG,May-July,High
+Fridge,LG GL-I292RPZ3 Single Door Fridge,145,LG,June-August,Medium
+Fridge,LG GC-B22FTLPL Side by Side Fridge,220,LG,May-July,High
+Fridge,Samsung RT28T3032S8 Double Door Fridge,160,Samsung,June-August,High
+Fridge,Samsung RR22M272YCU Single Door Fridge,130,Samsung,April-June,Medium
+Fridge,Samsung RT38K5992S8 Double Door Fridge,185,Samsung,May-July,High
+Fridge,Whirlpool 190L Single Door Fridge,130,Whirlpool,May-June,Medium
+Fridge,Whirlpool 265L Frost Free Double Door Fridge,185,Whirlpool,May-July,High
+Fridge,Whirlpool 340L 3 Star Fridge,200,Whirlpool,June-August,Medium
+Fridge,Godrej 190L Single Door Fridge,125,Godrej,June-August,Medium
+Fridge,Godrej 380L Double Door Fridge,180,Godrej,May-July,High
+Fridge,Godrej 350L Inverter Fridge,210,Godrej,April-June,Medium
+Fridge,Haier HRF-1953BS Double Door Fridge,180,Haier,May-July,High
+Fridge,Haier HRF-2053MSS Double Door Fridge,200,Haier,June-August,Medium
+Fridge,Haier HRB-3404BSR Double Door Fridge,210,Haier,May-June,High
+Fridge,Panasonic NR-BX468VSS Single Door Fridge,140,Panasonic,July-September,Medium
+Fridge,Panasonic NR-BX470VSX Double Door Fridge,180,Panasonic,April-June,Medium
+Fridge,Panasonic NR-BX375VSN Double Door Fridge,170,Panasonic,May-July,High
+Fridge,Bosch KGV33VL32S Double Door Fridge,210,Bosch,June-August,High
+Fridge,Bosch KGN57AI20P French Door Fridge,250,Bosch,April-June,Medium
+Fridge,Bosch 188L Top Freezer Fridge,180,Bosch,September-November,Low
+Fridge,Electrolux EBM1300 Double Door Fridge,220,Electrolux,April-June,Medium
+Fridge,Electrolux EC35 Double Door Fridge,210,Electrolux,May-July,High
+Fridge,Electrolux ERB3412GGI Double Door Fridge,190,Electrolux,June-August,Medium
+Fridge,Sharp SJ-PF38T10A Fridge Freezer,180,Sharp,July-September,Medium
+Fridge,Sharp SJ-XB605D Fridge Freezer,210,Sharp,May-June,High
+Fridge,Sharp SJ-BR30M Fridge,195,Sharp,May-July,Medium
+Fridge,Siemens KA62DAI20 Built-In Fridge,200,Siemens,November-February,Low
+Fridge,Siemens KG56NAI40 French Door Fridge,220,Siemens,May-July,High
+Fridge,Siemens KS36VBW30 Single Door Fridge,180,Siemens,June-August,Medium
+Fridge,Electrolux ERB3412GGI Double Door Fridge,190,Electrolux,June-August,Medium
+Fridge,Electrolux ERB3411PGI Double Door Fridge,200,Electrolux,May-July,High
+Fridge,Electrolux EC35 Double Door Fridge,210,Electrolux,April-June,Medium
+Fridge,Godrej 251L Double Door Fridge,200,Godrej,May-July,High
+Fridge,Godrej 340L Fridge,215,Godrej,June-August,Medium
+Fridge,Godrej 170L Single Door Fridge,140,Godrej,October-February,Low
+Fridge,Haier HRB-2054BSR Double Door Fridge,180,Haier,May-June,High
+Fridge,Haier HRF-341BS Double Door Fridge,190,Haier,May-August,Medium
+Fridge,Haier HRD-1953BS Double Door Fridge,170,Haier,September-November,Low
+Fridge,Panasonic NR-BX468VSS Fridge,140,Panasonic,July-September,Medium
+Fridge,Panasonic NR-BX470VSX Fridge,180,Panasonic,April-June,Medium
+Fridge,Panasonic NR-BX375VSN Fridge,170,Panasonic,May-July,High
+Fan,Crompton Hill Briz Ceiling Fan,75,Crompton,May-July,High
+Fan,Crompton Sea Sapphira Ceiling Fan,80,Crompton,May-August,Medium
+Fan,Crompton Energion Roverr Underlight 1200mm,85,Crompton,June-August,Low
+Fan,Havells Ambrose Ceiling Fan,70,Havells,May-June,High
+Fan,Havells Aerodeck Ceiling Fan,75,Havells,May-July,Medium
+Fan,Havells Glide Ceiling Fan,65,Havells,October-November,Low
+Fan,Bajaj Speedster Ceiling Fan,85,Bajaj,May-July,High
+Fan,Bajaj Riano Ceiling Fan,90,Bajaj,May-June,Medium
+Fan,Bajaj Regal Ceiling Fan,60,Bajaj,December-February,Low
+Fan,Usha Bloom Daffodil Ceiling Fan,75,Usha,May-June,High
+Fan,Usha Maxx Air Ceiling Fan,80,Usha,April-July,Medium
+Fan,Usha Striker Ceiling Fan,70,Usha,October-November,Low
+Fan,Orient Electric Apex-FX Ceiling Fan,85,Orient Electric,May-June,High
+Fan,Orient Wendy Ceiling Fan,90,Orient Electric,May-July,Medium
+Fan,Orient Aeroquiet Ceiling Fan,75,Orient Electric,September-October,Low
+Fan,Atomberg Renesa Fan With Remote,90,Atomberg,May-June,High
+Fan,Atomberg Superfan,85,Atomberg,May-June,Medium
+Fan,Atomberg Gorilla Fan,95,Atomberg,June-July,Low
+Fan,Hunter Original Ceiling Fan,85,Hunter Fan Company,June-August,High
+Fan,Hunter Signal Ceiling Fan,90,Hunter Fan Company,May-June,Medium
+Fan,Hunter Cassiopeia Ceiling Fan,80,Hunter Fan Company,September-October,Low
+Fan,Luminous Morpheus Anti�Rust Ceiling Fan,60,Luminous,April-May,High
+Fan,Luminous Glit Ceiling Fan,75,Luminous,May-June,Medium
+Fan,Luminous Ceiling Fan 1200mm,70,Luminous,November-February,Low
+Fan,Emerson CF765BQ Ceiling Fan,85,Emerson Electric Co,June-July,High
+Fan,Emerson Carrera Grande Eco Ceiling Fan,90,Emerson Electric Co,May-June,Medium
+Fan,Emerson Altus Ceiling Fan,80,Emerson Electric Co,September-October,Low
+Fan,Polycab Dusk Ceiling Fan,75,Polycab,May-July,High
+Fan,Polycab Scimitar Ceiling Fan,85,Polycab,June-August,Medium
+Fan,Polycab Usha Fan,70,Polycab,October-November,Low
+Fan,Khaitan Celesta Ceiling Fan,65,Khaitan,June-July,High
+Fan,Khaitan Capri Ceiling Fan,80,Khaitan,May-June,Medium
+Fan,Khaitan AirPlus Ceiling Fan,70,Khaitan,October-November,Low
+Fan,Minka-Aire F844-DK Ceiling Fan,90,Minka-Aire,June-July,High
+Fan,Minka-Aire Xtreme Ceiling Fan,95,Minka-Aire,May-June,Medium
+Fan,Minka-Aire Malibu Ceiling Fan,85,Minka-Aire,September-October,Low
+Fan,Broan-NuTone 443 Ceiling Fan,75,Broan-NuTone LLC,April-June,High
+Fan,Broan-NuTone 544 Ceiling Fan,80,Broan-NuTone LLC,May-June,Medium
+Fan,Broan-NuTone Ceiling Fan,65,Broan-NuTone LLC,November-December,Low
+Fan,Kichler Tulle Ceiling Fan,85,Kichler,June-July,High
+Fan,Kichler 52-Inch Ceiling Fan,90,Kichler,May-June,Medium
+Fan,"Kichler Ceiling Fan 60""",100,Kichler,September-October,Low
+Fan,Casablanca Wisp Ceiling Fan,95,Casablanca Fan Company,May-June,High
+Fan,Casablanca Bellagio Ceiling Fan,80,Casablanca Fan Company,April-May,Medium
+Fan,Casablanca Classic Ceiling Fan,90,Casablanca Fan Company,November-December,Low
+Fan,Activa Ceiling Fan,70,Activa,June-July,High
+Fan,Activa Ventilation Fan,85,Activa,May-June,Medium
+Fan,Activa Ceiling Fan with LED,65,Activa,October-November,Low
+Heater,HC 2000W,2000,Delonghi,Winter,High
+Heater,TS-20 2000W,2000,Black+Decker,Winter,High
+Heater,HD04 1500W,1500,DeLonghi,Winter,Medium
+Heater,Oil Radiator 9 fins,2000,Honeywell,Winter,High
+Heater,CH1500 1500W,1500,Crane,Winter,Medium
+Heater,HeatForce 1500W,1500,Emerson,Winter,Medium
+Heater,Quilted 2000W,2000,Panasonic,Winter,High
+Heater,FH 1000W,1000,Philips,Winter,Low
+Heater,GH5000 5000W,5000,Goodman,Winter,High
+Heater,MF100 1000W,1000,Master,Winter,Low
+Heater,CFH 8000W,8000,HeatCraft,Winter,High
+Heater,ElectroHeat 1000W,1000,Electrolux,Winter,Low
+Heater,CRH2000 2000W,2000,Circulon,Winter,Medium
+Heater,OHS1500W 1500W,1500,Orpat,Winter,Medium
+Heater,SHR 8000W 8000W,8000,Sharp,Winter,High
+Heater,HC8000 8000W,8000,Henkel,Winter,High
+Heater,HF 2000W,2000,Homelux,Winter,Medium
+Heater,HeatPro 1500W,1500,HeatMaster,Winter,Low
+Heater,Osb300 3000W,3000,Osram,Winter,Medium
+Heater,MaxiHeat 5000W,5000,MaxxAir,Winter,High
+Heater,Omni 5000W,5000,Omni,Winter,High
+Heater,Equinox 1000W,1000,Equator,Winter,Low
+Heater,AR 1000W,1000,Arctic,Winter,Low
+Heater,EMT 1500W,1500,Empress,Winter,Medium
+Heater,JetFan 2000W,2000,Jet,Winter,Medium
+Heater,IM3000 3000W,3000,Innova,Winter,Medium
+Heater,RapidHeat 2500W,2500,Remington,Winter,High
+Heater,SpeedFan 1000W,1000,SpeedAir,Winter,Low
+Heater,WindShaper 3000W,3000,WindFree,Winter,Medium
+Heater,PowerHeat 2000W,2000,PowerCool,Winter,Medium
+Heater,Atmos 2000W,2000,AirMax,Winter,Medium
+Heater,Breeze 1500W,1500,BreezeMaster,Winter,Low
+Heater,UltraHeat 1000W,1000,UltraAir,Winter,Low
+Heater,Elite 8000W,8000,EliteFan,Winter,High
+Heater,TrueHeat 1000W,1000,TrueCool,Winter,Low
+Heater,QuickHeat 1500W,1500,QuickAir,Winter,Medium
+Heater,SuperFan 2000W,2000,SuperCool,Winter,Medium
+Heater,HotBox 1000W,1000,HotMax,Winter,Low
+Heater,FanMaster 1500W,1500,AirMaster,Winter,Medium
+Heater,FrostAway 2000W,2000,FrostMaster,Winter,Medium
+Heater,Polar 1000W,1000,PolarFan,Winter,Low
+Heater,WindFlow 2500W,2500,WindCool,Winter,Medium
+Heater,HeatFlow 3000W,3000,HeatMaster,Winter,High
+Heater,Element 1000W,1000,ElementFan,Winter,Low
+Heater,SolarHeat 1000W,1000,SolarFan,Winter,Low
+Heater,SwiftHeat 2000W,2000,SwiftCool,Winter,Medium
+Heater,OptimaHeat 2000W,2000,OptiFan,Winter,Medium
+Heater,AirBliss 1500W,1500,BlissMaster,Winter,Medium
+Heater,Exo 3000W,3000,ExoFan,Winter,High
+Heater,DynamicHeat 2000W,2000,DynamicAir,Winter,Medium
+Heater,ProHeat 1000W,1000,ProFan,Winter,Low
+Heater,TurboHeat 1500W,1500,TurboAir,Winter,Medium
+Heater,FrostBite 1000W,1000,FrostPro,Winter,Low
+Heater,CompactHeat 1500W,1500,CompactAir,Winter,Medium
+Laptop,Model 1,45,None,All Year,Low
+Laptop,Model 2,55,None,All Year,Low
+Laptop,Model 3,60,None,All Year,Medium
+Laptop,Model 4,90,None,All Year,Medium
+Laptop,Model 5,120,None,All Year,High
+Laptop,Model 6,100,None,All Year,Medium
+Laptop,Model 7,85,None,All Year,Medium
+Laptop,Model 8,95,None,All Year,High
+Laptop,Model 9,75,None,All Year,Medium
+Laptop,Model 10,70,None,All Year,Low
+Laptop,Model 11,80,None,All Year,Medium
+Laptop,Model 12,50,None,All Year,Low
+Laptop,Model 13,65,None,All Year,Medium
+Laptop,Model 14,130,None,All Year,High
+Laptop,Model 15,100,None,All Year,Medium
+Laptop,Model 16,90,None,All Year,Medium
+Laptop,Model 17,115,None,All Year,High
+Laptop,Model 18,140,None,All Year,High
+Laptop,Model 19,125,None,All Year,High
+Laptop,Model 20,80,None,All Year,Medium
+Laptop,Model 21,70,None,All Year,Low
+Laptop,Model 22,55,None,All Year,Low
+Laptop,Model 23,200,None,All Year,High
+Laptop,Model 24,150,None,All Year,High
+Laptop,Model 25,85,None,All Year,Medium
+Laptop,Model 26,65,None,All Year,Medium
+Laptop,Model 27,110,None,All Year,High
+Laptop,Model 28,95,None,All Year,Medium
+Laptop,Model 29,130,None,All Year,High
+Laptop,Model 30,145,None,All Year,High
+Laptop,Model 31,50,None,All Year,Low
+Laptop,Model 32,80,None,All Year,Medium
+Laptop,Model 33,100,None,All Year,Medium
+Laptop,Model 34,120,None,All Year,High
+Laptop,Model 35,150,None,All Year,High
+Laptop,Model 36,75,None,All Year,Medium
+Laptop,Model 37,85,None,All Year,Medium
+Laptop,Model 38,160,None,All Year,High
+Laptop,Model 39,95,None,All Year,Medium
+Laptop,Model 40,110,None,All Year,High
+Laptop,Model 41,125,None,All Year,High
+Laptop,Model 42,95,None,All Year,Medium
+Laptop,Model 43,135,None,All Year,High
+Laptop,Model 44,155,None,All Year,High
+Laptop,Model 45,45,None,All Year,Low
+Laptop,Model 46,70,None,All Year,Low
+Laptop,Model 47,105,None,All Year,Medium
+Laptop,Model 48,200,None,All Year,High
+Laptop,Model 49,120,None,All Year,High
+Laptop,Model 50,150,None,All Year,High
+Microwave,EM720CPL-PM 0.7 cu. ft.,700,Emerson,All Year,Medium
+Microwave,NES5042S 1.4 cu. ft.,1200,Sharp,All Year,Medium
+Microwave,GGG6001W 20L,800,Godrej,All Year,Low
+Microwave,MES25D 2.5 cu. ft.,1000,Magic Chef,All Year,Medium
+Microwave,EM720CWB 0.7 cu. ft.,700,Emerson,All Year,Low
+Microwave,MC12 1.2 cu. ft.,900,Microwave Commercial,All Year,Medium
+Microwave,MS23F301TAS 23L,800,Samsung,All Year,Medium
+Microwave,MWG-1500W 1.5 cu. ft.,1500,Haier,All Year,Medium
+Microwave,Lita 20L,700,Panasonic,All Year,Low
+Microwave,MO-2001J 20L,800,LG,All Year,Medium
+Microwave,GEJ950SS 1.0 cu. ft.,1100,GE,All Year,Medium
+Microwave,EM720CPL-BM 0.7 cu. ft.,700,Emerson,All Year,Low
+Microwave,MWG-1150W 1.5 cu. ft.,1150,Godrej,All Year,Medium
+Microwave,AWG21B 21L,800,Whirlpool,All Year,Medium
+Microwave,CSG1600AW 1.6 cu. ft.,1200,Samsung,All Year,Medium
+Microwave,GR430A 0.7 cu. ft.,700,LG,All Year,Low
+Microwave,NF3200 0.9 cu. ft.,1000,Panasonic,All Year,Medium
+Microwave,DGE-2500A 25L,900,Daewoo,All Year,Medium
+Microwave,AEG MW-30 30L,1000,AEG,All Year,Low
+Microwave,COMF-22A 22L,800,Comfee,All Year,Low
+Microwave,MC12 1.2 cu. ft.,900,Magic Chef,All Year,Medium
+Microwave,MS3001W 1.0 cu. ft.,1200,Haier,All Year,Medium
+Microwave,LG MS23F301TAS 23L,800,LG,All Year,Low
+Microwave,SHR-7028 20L,700,Sharp,All Year,Low
+Microwave,DE-1085 0.8 cu. ft.,900,Daewoo,All Year,Medium
+Microwave,GM5100W 20L,800,Godrej,All Year,Low
+Microwave,COMF-20 20L,750,Comfee,All Year,Low
+Microwave,NES 5000W 1.0 cu. ft.,1000,Sharp,All Year,Medium
+Microwave,HL-108W 1.0 cu. ft.,800,Haier,All Year,Medium
+Microwave,EMW-10 0.7 cu. ft.,700,Emerson,All Year,Low
+Microwave,NF-3010S 1.0 cu. ft.,1000,Panasonic,All Year,Medium
+Microwave,MA25 25L,800,Midea,All Year,Low
+Microwave,SMH1611B 1.6 cu. ft.,1000,Samsung,All Year,Medium
+Microwave,GG20 20L,750,Godrej,All Year,Low
+Microwave,MW20B 20L,800,Whirlpool,All Year,Low
+Microwave,AVM-232 1.2 cu. ft.,1000,Aventura,All Year,Medium
+Microwave,MRD20 20L,800,Moulinex,All Year,Low
+Microwave,GM010 1.0 cu. ft.,1000,Godrej,All Year,Medium
+Microwave,DG003 1.5 cu. ft.,1200,Daewoo,All Year,Medium
+Microwave,NG-500W 0.5 cu. ft.,700,Nec,All Year,Low
+Microwave,MW-7201W 1.0 cu. ft.,800,Sharp,All Year,Low
+Microwave,DR600 1.2 cu. ft.,1000,Delonghi,All Year,Medium
+Microwave,SMC1030W 1.0 cu. ft.,1100,Samsung,All Year,Medium
+Microwave,MWG20 20L,800,Whirlpool,All Year,Low
+Microwave,MG2030W 20L,800,Midea,All Year,Low
+Microwave,STN7001 0.7 cu. ft.,700,Sharp,All Year,Low
+Microwave,AXD 20L,800,Axsonic,All Year,Medium
+Microwave,AV2000W 1.5 cu. ft.,1500,Haier,All Year,Medium
+Microwave,HLG13 1.0 cu. ft.,1000,Haier,All Year,Low
+Microwave,CFM-20 20L,750,Comfee,All Year,Low
+Microwave,GEJ990 1.0 cu. ft.,1000,GE,All Year,Medium
+Microwave,MWO-1000W 1.0 cu. ft.,1000,Magic Chef,All Year,Medium
+Microwave,ST60 0.6 cu. ft.,700,Samsung,All Year,Low
+Microwave,CG 20L,800,Classic,All Year,Low
+Microwave,MO25MWD 25L,1000,Moulinex,All Year,Medium
+Oven,SGP280X 28L,1500,Siemens,All Year,Medium
+Oven,BO150SS 60L,2000,Bosch,All Year,Medium
+Oven,EO60 60L,1800,Electrolux,All Year,Medium
+Oven,FTG8004 60L,1900,Frigidaire,All Year,Medium
+Oven,NEFF B57CS24N0B 71L,2200,NEFF,All Year,Medium
+Oven,MMV5207WB 1.6 cu. ft.,1100,Maytag,All Year,Medium
+Oven,FPO303 30L,1600,Frigidaire,All Year,Low
+Oven,GEJEM3000SF 30L,1200,GE,All Year,Medium
+Oven,OCB170SS 70L,1800,OvenCraft,All Year,Medium
+Oven,PB57D 45L,1500,Pelgrim,All Year,Medium
+Oven,AKZ 6210 IX 65L,1500,AEG,All Year,Medium
+Oven,MM2210S 22L,800,Microwave Commercial,All Year,Low
+Oven,BOSCH HBG634BS1 71L,2200,Bosch,All Year,Medium
+Oven,HEB522AB0 71L,2000,NEFF,All Year,Medium
+Oven,MO70MDDUS 70L,1500,Microwave Over,All Year,Medium
+Oven,BAKEHUB3000W 40L,3000,BakeHub,All Year,Medium
+Oven,CUL1950 19L,1000,Cuqer,All Year,Low
+Oven,MS720 25L,1200,MasterChef,All Year,Low
+Oven,MCG-25L 25L,1000,Magic Chef,All Year,Medium
+Oven,LWX500 50L,2000,LG,All Year,Medium
+Oven,FTV650 60L,1800,Fisher & Paykel,All Year,Medium
+Oven,OV60X 60L,1800,Omega,All Year,Medium
+Oven,CSG1600B 1.6 cu. ft.,1600,Classic,All Year,Low
+Oven,PMC-820 20L,1000,ProMaster,All Year,Low
+Oven,SMS64M18IN 60L,2000,Siemens,All Year,Medium
+Oven,ST 60 60L,1800,Stoves,All Year,Medium
+Oven,S1700 50L,1200,Samsung,All Year,Low
+Oven,TR26 25L,800,Trendy,All Year,Low
+Oven,SGO 500 30L,1500,Sharp,All Year,Medium
+Oven,MCG-33L 33L,1200,MasterChef,All Year,Low
+Oven,GME30S 30L,1500,Goodman,All Year,Medium
+Oven,MDAF2 50L,1400,Midea,All Year,Low
+Oven,UDV60X 60L,1500,Ultimate,All Year,Medium
+Oven,AEG BPE742320M 70L,2200,AEG,All Year,Medium
+Oven,AKP 230 IX 45L,1400,AEG,All Year,Low
+Oven,HDB90 90L,2200,Hafele,All Year,Medium
+Oven,FSO20L 20L,800,FasGo,All Year,Low
+Oven,KX-500 30L,1000,Kalpana,All Year,Low
+Oven,RV-700 30L,1000,Riviera,All Year,Low
+Oven,AEG 850 55L,1500,AEG,All Year,Low
+Oven,NEFF B3ACE4HN0B 71L,2000,NEFF,All Year,Medium
+Oven,LGO850 60L,1500,LG,All Year,Medium
+Oven,FXN06 60L,1500,Finlux,All Year,Low
+Oven,S35R853 60L,1600,Samsung,All Year,Medium
+Oven,OMEGA F4000 40L,1800,Omega,All Year,Low
+Oven,CF120 120L,2200,Chef,All Year,Medium
+Oven,SOV 350 35L,1200,Sharp,All Year,Medium
+Oven,PTL2X 60L,1800,Porter,All Year,Low
+Oven,TF700 70L,1500,Tristar,All Year,Low
+Oven,OV60MX 60L,1800,OvenX,All Year,Medium
+Oven,KC500 50L,1200,Kenwood,All Year,Low
+Oven,CM-850 30L,900,Comfee,All Year,Low
+Oven,RYD1200 20L,1000,Redy,All Year,Medium
+Oven,CC60SS 60L,1500,Cavendish,All Year,Medium
+Oven,XR50X 50L,1400,Xpert,All Year,Low
+Oven,MYZ50 50L,1000,Mystic,All Year,Low
+Oven,HSM700 70L,2000,Hoover,All Year,Medium
+Oven,MCB2500W 25L,900,Microwave Chef,All Year,Low
+Oven,GJ05 50L,1000,Glory,All Year,Medium
+Oven,KD50 50L,1000,Kenwood,All Year,Low
+Oven,VG40 40L,1500,Vanguard,All Year,Medium
+Oven,KX-830 30L,900,Kalpana,All Year,Low
+Oven,SX30 30L,800,Stoves,All Year,Low
+Oven,AEG 900L 90L,2000,AEG,All Year,Medium
+Oven,RD900 90L,2000,Redstar,All Year,Low
+Oven,GCE-4000 40L,1200,Goodson,All Year,Medium
+Oven,VSX60 60L,1400,Viva,All Year,Low
+TV,Samsung QN90A Neo QLED 4K,160,Samsung,All Year,Medium
+TV,LG OLED C1 Series 55 Inch,120,LG,All Year,Medium
+TV,Sony A80J 65 Inch OLED,130,Sony,All Year,Medium
+TV,TCL 6-Series 65-Inch QLED,150,TCL,All Year,Medium
+TV,Vizio 55-Inch 4K Smart TV,100,Vizio,All Year,Medium
+TV,Hisense 65-Inch ULED U7G,140,Hisense,All Year,Medium
+TV,Panasonic 55-Inch 4K HDR,110,Panasonic,All Year,Medium
+TV,Philips 50-Inch 4K LED,95,Philips,All Year,Low
+TV,Sharp 60-Inch 4K LED TV,145,Sharp,All Year,Medium
+TV,"Vizio P-Series Quantum 65""",160,Vizio,All Year,Medium
+TV,Samsung QLED Q60A Series,125,Samsung,All Year,Medium
+TV,LG NanoCell 85 Series,115,LG,All Year,Low
+TV,Sony X90J 65-Inch,135,Sony,All Year,Medium
+TV,TCL 5-Series 55-Inch 4K,130,TCL,All Year,Medium
+TV,LG 65-Inch UHD Smart TV,140,LG,All Year,Medium
+TV,Samsung The Frame 55-Inch,150,Samsung,All Year,Medium
+TV,Sony Bravia 55-Inch 4K,120,Sony,All Year,Low
+TV,Panasonic 58-Inch 4K TV,110,Panasonic,All Year,Low
+TV,Philips 55-Inch 4K LED,100,Philips,All Year,Low
+TV,Sharp 50-Inch LED TV,105,Sharp,All Year,Low
+TV,Samsung 55-Inch QLED 4K,145,Samsung,All Year,Medium
+TV,LG 55-Inch 4K UHD Smart TV,110,LG,All Year,Medium
+TV,Sony A9G OLED 55-Inch,125,Sony,All Year,Medium
+TV,TCL 8-Series 65-Inch QLED,155,TCL,All Year,Medium
+TV,Vizio 65-Inch 4K Smart TV,120,Vizio,All Year,Medium
+TV,Samsung 75-Inch QLED TV,160,Samsung,All Year,Medium
+TV,LG 77-Inch OLED TV,180,LG,All Year,Medium
+TV,Sony 85-Inch Bravia X9000H,200,Sony,All Year,High
+TV,TCL 55-Inch 5-Series QLED,110,TCL,All Year,Low
+TV,Vizio 70-Inch 4K LED TV,135,Vizio,All Year,Medium
+TV,Philips 65-Inch 4K UHD,125,Philips,All Year,Medium
+TV,Panasonic 65-Inch 4K LED TV,140,Panasonic,All Year,Medium
+TV,Samsung 50-Inch 4K QLED,120,Samsung,All Year,Low
+TV,LG 65-Inch QNED Mini LED,155,LG,All Year,Medium
+TV,Sony 55-Inch 4K HDR TV,115,Sony,All Year,Low
+TV,Hisense 75-Inch 4K ULED,150,Hisense,All Year,Medium
+TV,Sharp 65-Inch LED TV,130,Sharp,All Year,Medium
+TV,TCL 50-Inch 4K QLED,125,TCL,All Year,Low
+TV,Samsung 43-Inch 4K Smart TV,100,Samsung,All Year,Low
+TV,LG 50-Inch UHD 4K,105,LG,All Year,Low
+TV,Sony 75-Inch Bravia LED,165,Sony,All Year,Medium
+TV,Panasonic 55-Inch 4K OLED,120,Panasonic,All Year,Low
+TV,Vizio 58-Inch 4K Smart TV,135,Vizio,All Year,Medium
+TV,Samsung 32-Inch LED TV,90,Samsung,All Year,Low
+TV,Hisense 50-Inch 4K TV,110,Hisense,All Year,Low
+TV,LG 77-Inch OLED 4K TV,180,LG,All Year,Medium
+TV,Sony 65-Inch 4K Ultra HD TV,125,Sony,All Year,Medium
+TV,Philips 75-Inch 4K TV,145,Philips,All Year,Medium
+TV,TCL 75-Inch 8K QLED TV,180,TCL,All Year,Medium
+TV,Vizio 43-Inch LED TV,95,Vizio,All Year,Low
+TV,Panasonic 50-Inch 4K HDR,100,Panasonic,All Year,Low
+TV,Samsung 65-Inch 4K Smart TV,125,Samsung,All Year,Medium
+TV,Sony 50-Inch Bravia LED TV,105,Sony,All Year,Low
+TV,TCL 60-Inch 4K TV,140,TCL,All Year,Medium
+TV,Vizio 70-Inch Quantum LED TV,155,Vizio,All Year,Medium
+TV,LG 65-Inch 4K OLED TV,145,LG,All Year,Medium
+TV,Sharp 70-Inch 4K TV,155,Sharp,All Year,Medium
+TV,Samsung 85-Inch LED TV,200,Samsung,All Year,High
+TV,Sony 65-Inch Bravia OLED,135,Sony,All Year,Medium
+TV,Panasonic 77-Inch OLED TV,180,Panasonic,All Year,Medium
+TV,TCL 55-Inch 6-Series QLED,140,TCL,All Year,Medium
+TV,Vizio 55-Inch Smart LED TV,110,Vizio,All Year,Low
+TV,Samsung 65-Inch 8K QLED,200,Samsung,All Year,High
+TV,QN75Q80AAFXZA 75-Inch,160,Samsung,All Year,Medium
+TV,55UM7300PUA 55-Inch,120,LG,All Year,Medium
+TV,XBR-65X950H 65-Inch,140,Sony,All Year,Medium
+TV,4-Series 43-Inch,90,TCL,All Year,Low
+TV,D-Series 50-Inch,100,Vizio,All Year,Medium
+TV,70-Inch 4K ULED,145,Hisense,All Year,Medium
+TV,TX-55GZ2000 55-Inch,130,Panasonic,All Year,Medium
+TV,65OLED803/12,120,Philips,All Year,Medium
+TV,LC-65N7000U 65-Inch,130,Sharp,All Year,Medium
+TV,QN90T QLED 55-Inch,160,Samsung,All Year,Medium
+TV,OLED55CXPUA 55-Inch,115,LG,All Year,Medium
+TV,X950G 65-Inch,150,Sony,All Year,Medium
+TV,55R617 55-Inch,125,TCL,All Year,Medium
+TV,49UJ6300 49-Inch,110,LG,All Year,Low
+TV,M-Series Quantum 55-Inch,135,Vizio,All Year,Medium
+TV,The Sero 43-Inch,145,Samsung,All Year,Medium
+TV,X9500H 75-Inch,150,Sony,All Year,High
+TV,43-Inch 4K ULED,100,Hisense,All Year,Low
+TV,TX-58GZ1000 58-Inch,145,Panasonic,All Year,Medium
+TV,50PUS7354 50-Inch,110,Philips,All Year,Low
+TV,LC-43N7000U 43-Inch,100,Sharp,All Year,Low
+TV,65Q80A QLED,140,Samsung,All Year,Medium
+TV,75NANO99UNA 75-Inch,155,LG,All Year,High
+TV,XBR-85X900H 85-Inch,200,Sony,All Year,High
+TV,55R635 55-Inch,130,TCL,All Year,Medium
+TV,70-Inch 4K LED TV,160,Vizio,All Year,Medium
+TV,75H9G 75-Inch 4K,160,Hisense,All Year,Medium
+TV,TX-55FZ952 55-Inch,120,Panasonic,All Year,Medium
+TV,65PUS8505/12 65-Inch,135,Philips,All Year,Medium
+TV,LC-50N7000U 50-Inch,105,Sharp,All Year,Low
+TV,UN50NU6900 50-Inch,95,Samsung,All Year,Low
+TV,70UM7370PUA 70-Inch,145,LG,All Year,Medium
+TV,A8H 55-Inch OLED,120,Sony,All Year,Medium
+TV,P-Series Quantum 75-Inch,175,Vizio,All Year,Medium
+TV,65S425 65-Inch,140,TCL,All Year,Medium
+TV,50H8F 50-Inch,110,Hisense,All Year,Low
+TV,TX-55EX780 55-Inch,135,Panasonic,All Year,Medium
+TV,55N7000U 55-Inch,115,Sharp,All Year,Medium
+TV,75Q70T QLED,150,Samsung,All Year,Medium
+TV,55SK9000PUA 55-Inch,125,LG,All Year,Medium
+TV,65X900F 65-Inch,140,Sony,All Year,Medium
+TV,65H9G 65-Inch,140,Hisense,All Year,Medium
+TV,75Q825 75-Inch,155,TCL,All Year,Medium
+TV,M-Series 70-Inch,145,Vizio,All Year,Medium
+TV,TX-50GZ1000 50-Inch,125,Panasonic,All Year,Medium
+TV,55PUS6401 55-Inch,105,Philips,All Year,Low
+TV,QN95T 55-Inch QLED,160,Samsung,All Year,Medium
+TV,65NANO85UNA 65-Inch,140,LG,All Year,Medium
+TV,QN70Q60AAFXZA 70-Inch,150,Samsung,All Year,Medium
+TV,55Q80T QLED,135,Samsung,All Year,Medium
+TV,X90J 55-Inch,140,Sony,All Year,Medium
+TV,50P615 50-Inch,110,Hisense,All Year,Low
+TV,65PUS6262 65-Inch,120,Philips,All Year,Medium
+TV,TX-55EZ950 55-Inch,130,Panasonic,All Year,Medium
+TV,45U6G 45-Inch,105,Hisense,All Year,Low
+TV,55R635 55-Inch,130,TCL,All Year,Medium
+TV,70Q60T QLED 70-Inch,150,Samsung,All Year,Medium
+TV,50PUS7554 50-Inch,115,Philips,All Year,Low
+TV,65X800H 65-Inch,145,Sony,All Year,Medium
+TV,LG 55NANO85UNA,155,LG,All Year,High
+TV,Samsung TU8000 55-Inch,135,Samsung,All Year,Medium
+TV,65U7G 65-Inch,145,Hisense,All Year,Medium
+TV,55QN90A QLED,160,Samsung,All Year,Medium
+TV,55A8 55-Inch OLED,125,Sony,All Year,Medium
+TV,75Q80A QLED,150,Samsung,All Year,Medium
+TV,65X950H 65-Inch,160,Sony,All Year,High
+TV,43Q60A QLED,100,Samsung,All Year,Low
+TV,55S425 55-Inch,120,TCL,All Year,Medium
+TV,50LQ6300 50-Inch,105,LG,All Year,Low
+TV,60UN7300PUA 60-Inch,125,LG,All Year,Medium
+TV,65P7A 65-Inch,130,Philips,All Year,Medium
+TV,55B9 OLED,110,Sony,All Year,Low
+TV,65U8G 65-Inch,140,Hisense,All Year,Medium
+TV,55MU8000 55-Inch,120,Samsung,All Year,Medium
+TV,50P715 50-Inch,100,Hisense,All Year,Low
+TV,55LQ8500 55-Inch,115,LG,All Year,Low
+TV,65S5 65-Inch,145,Sony,All Year,Medium
+TV,55Q6FN 55-Inch,135,Samsung,All Year,Medium
+TV,50P615 50-Inch,100,Hisense,All Year,Low
+TV,43X800H 43-Inch,95,Sony,All Year,Low
+TV,65U8G 65-Inch,140,Hisense,All Year,Medium
+TV,65NANO80UNA 65-Inch,120,LG,All Year,Medium
+TV,QN55Q80AAFXZA 55-Inch,160,Samsung,All Year,Medium
+TV,65NANO90UNA 65-Inch,145,LG,All Year,Medium
+TV,XBR-75X950H 75-Inch,160,Sony,All Year,High
+TV,43S425 43-Inch,90,TCL,All Year,Low
+TV,D55-D1 55-Inch,95,Vizio,All Year,Low
+TV,75H9F 75-Inch,170,Hisense,All Year,High
+TV,TX-50FZ1000 50-Inch,130,Panasonic,All Year,Medium
+TV,50PUS6412 50-Inch,105,Philips,All Year,Low
+TV,55Q70T QLED 55-Inch,140,Samsung,All Year,Medium
+TV,49UJ7700 49-Inch,110,LG,All Year,Low
+TV,65X800E 65-Inch,120,Sony,All Year,Medium
+TV,43U6G 43-Inch,100,Hisense,All Year,Low
+TV,M65A 65-Inch,130,Vizio,All Year,Medium
+TV,TX-55EX900 55-Inch,140,Panasonic,All Year,Medium
+TV,50LQ6300 50-Inch,105,LG,All Year,Low
+TV,X950H 55-Inch,140,Sony,All Year,Medium
+TV,65S543 65-Inch,125,Sharp,All Year,Medium
+TV,65U7G 65-Inch,150,Hisense,All Year,Medium
+TV,50UM7300PUA 50-Inch,100,LG,All Year,Low
+TV,55X950G 55-Inch,145,Sony,All Year,Medium
+TV,70NANO95UNA 70-Inch,160,LG,All Year,Medium
+TV,55MU7000 55-Inch,130,Samsung,All Year,Medium
+TV,65KDL-50W800B 50-Inch,120,Sony,All Year,Medium
+TV,55LQ8500 55-Inch,115,LG,All Year,Medium
+TV,43P8 43-Inch,90,Philips,All Year,Low
+TV,55X900E 55-Inch,135,Sony,All Year,Medium
+TV,65P5A 65-Inch,125,Philips,All Year,Medium
+TV,50NU6900 50-Inch,110,Samsung,All Year,Low
+TV,65GZ1000 65-Inch,150,Panasonic,All Year,High
+TV,55X7000F 55-Inch,120,Sony,All Year,Medium
+TV,75Q70R QLED 75-Inch,155,Samsung,All Year,Medium
+TV,65XG95 65-Inch,145,Sony,All Year,Medium
+TV,65FAL5000 65-Inch,135,LG,All Year,Medium
+TV,55H8F 55-Inch,110,Hisense,All Year,Low
+TV,50Q70T QLED,120,Samsung,All Year,Low
+TV,70M7 70-Inch,160,Vizio,All Year,Medium
+TV,55U6G 55-Inch,110,Hisense,All Year,Low
+TV,49KDL-49W800B 49-Inch,95,Sony,All Year,Low
+TV,75Q60A QLED 75-Inch,150,Samsung,All Year,Medium
+TV,43LQ6300 43-Inch,85,LG,All Year,Low
+TV,65A8H 65-Inch OLED,130,Sony,All Year,Medium
+TV,50U6G 50-Inch,100,Hisense,All Year,Low
+TV,55P617 55-Inch,120,Hisense,All Year,Medium
+TV,60LQ6300 60-Inch,115,LG,All Year,Medium
+TV,65S525 65-Inch,125,TCL,All Year,Medium
+TV,43LQ6500 43-Inch,90,LG,All Year,Low
+TV,65P815 65-Inch,130,Philips,All Year,Medium
+TV,70MU8000 70-Inch,160,Samsung,All Year,High
+TV,55CXPUA 55-Inch OLED,120,LG,All Year,Medium
+TV,75U8G 75-Inch,145,Hisense,All Year,Medium
+TV,43Q60A 43-Inch,90,Samsung,All Year,Low
+TV,65U8G 65-Inch,145,Hisense,All Year,Medium
+TV,50X8000H 50-Inch,100,Sony,All Year,Low
+TV,55MU7000 55-Inch,135,Samsung,All Year,Medium
+TV,75U7G 75-Inch,155,Hisense,All Year,High
+TV,50A8 50-Inch OLED,130,Sony,All Year,Medium
+TV,70P8 70-Inch,160,Philips,All Year,Medium
+TV,75X9500G 75-Inch,160,Sony,All Year,High
+TV,55QN85A QLED,140,Samsung,All Year,Medium
+TV,55X800E 55-Inch,125,Sony,All Year,Medium
+TV,65FAL5000 65-Inch,130,LG,All Year,Medium
+TV,75P715 75-Inch,170,Hisense,All Year,High
+TV,50NANO85UNA 50-Inch,115,LG,All Year,Medium
+TV,55P614 55-Inch,100,Philips,All Year,Low
+TV,70S425 70-Inch,160,TCL,All Year,Medium
+TV,55MU7000 55-Inch,135,Samsung,All Year,Medium
+TV,65NANO86UNA 65-Inch,140,LG,All Year,Medium
+TV,60X950H 60-Inch,140,Sony,All Year,Medium
+TV,75X9000H 75-Inch,160,Sony,All Year,High
+TV,65P8 65-Inch,130,Philips,All Year,Medium
+TV,43Q60A QLED,100,Samsung,All Year,Low
+TV,65QN90A 65-Inch,150,Samsung,All Year,High
+TV,55X8000H 55-Inch,125,Sony,All Year,Medium
+TV,60NANO95 60-Inch,150,LG,All Year,Medium
+TV,65U7G 65-Inch,150,Hisense,All Year,Medium
+TV,50NANO90 50-Inch,115,LG,All Year,Low
+TV,55Q8FN 55-Inch QLED,160,Samsung,All Year,High
+TV,70P8 70-Inch,155,Philips,All Year,Medium
+TV,65NANO95 65-Inch,160,LG,All Year,Medium
+TV,50MU7000 50-Inch,130,Samsung,All Year,Medium
+TV,55MU7000 55-Inch,120,Samsung,All Year,Medium
+TV,65A8H 65-Inch OLED,140,Sony,All Year,Medium
+TV,70Q60T 70-Inch,150,Samsung,All Year,Medium
+TV,55CX 55-Inch OLED,135,LG,All Year,Medium
+TV,75X9500G 75-Inch,160,Sony,All Year,High
+TV,50X800E 50-Inch,105,Sony,All Year,Low
+TV,60X800E 60-Inch,130,Sony,All Year,Medium
+TV,55P615 55-Inch,100,Hisense,All Year,Low
+TV,55U6G 55-Inch,110,Hisense,All Year,Medium
+TV,75U8G 75-Inch,145,Hisense,All Year,Medium
+TV,65P7A 65-Inch,135,Philips,All Year,Medium
+TV,55N7000 55-Inch,110,Sharp,All Year,Low
+Washing Machine,WF45R6100AP 4.5 cu. ft. Front Load,1200,Samsung,All Year,Medium
+Washing Machine,WAT28402UC 24-Inch,1500,Bosch,All Year,Medium
+Washing Machine,WFL-70600 7kg Front Load,1000,Whirlpool,All Year,Low
+Washing Machine,WM8100HVA 5.2 cu. ft. Front Load,1800,LG,All Year,Medium
+Washing Machine,WA52M7750AW 5.2 cu. ft.,1300,Samsung,All Year,Medium
+Washing Machine,AXIS 8 KG 1000 RPM,900,IFB,All Year,Low
+Washing Machine,DWM90A 9kg,1200,Daewoo,All Year,Medium
+Washing Machine,ESL-20 2 kg,500,Eureka Forbes,All Year,Low
+Washing Machine,WM-MC1055 10 kg,1000,MarQ,All Year,Medium
+Washing Machine,WM3900HWA 4.5 cu. ft.,1400,LG,All Year,Medium
+Washing Machine,HW100-B14979 10 kg,1100,Haier,All Year,Low
+Washing Machine,WTW5000DW 4.8 cu. ft.,1000,Whirlpool,All Year,Low
+Washing Machine,WA70J3000GW 7.0 kg,850,Samsung,All Year,Medium
+Washing Machine,CGWBS 8 KG 1000 RPM,950,LG,All Year,Medium
+Washing Machine,FGW 1365W 6 kg,700,Electrolux,All Year,Low
+Washing Machine,HEW-60 6kg Top Load,800,Haier,All Year,Low
+Washing Machine,WTL-95 9.5 kg,1200,Whirlpool,All Year,Medium
+Washing Machine,DD-W85 8.5 kg,1000,Dew,All Year,Low
+Washing Machine,FLW 914 9kg,800,IFB,All Year,Medium
+Washing Machine,XL-60 6 kg,700,LG,All Year,Low
+Washing Machine,VMW 4501 4.5 kg,700,Volt,All Year,Low
+Washing Machine,WM52 5.2 kg,1200,Samsung,All Year,Medium
+Washing Machine,ENX-705 7 kg,900,Electrolux,All Year,Medium
+Washing Machine,FL-600 6kg Front Load,1000,Indesit,All Year,Low
+Washing Machine,GT-W60F 6 kg,1100,Godrej,All Year,Medium
+Washing Machine,Twin-Tub-120 12 kg,850,Panasonic,All Year,Low
+Washing Machine,Front-1800 8 kg,1500,Siemens,All Year,High
+Washing Machine,8-Loader 8 kg,1200,Whirlpool,All Year,Medium
+Washing Machine,Sh-9 9 kg,1000,Sharp,All Year,Low
+Washing Machine,BOS-7 7 kg,950,Bosch,All Year,Medium
+Washing Machine,TM-WM28 2.8 kg,600,Godrej,All Year,Low
+Washing Machine,WF52M8500AW 5.2 cu. ft.,1500,Samsung,All Year,Medium
+Washing Machine,XD1400E 10 kg,800,Xiaomi,All Year,Low
+Washing Machine,WT70 7 kg Top Load,1000,Whirlpool,All Year,Low
+Washing Machine,SGW-91 9.1 kg,1100,Siemens,All Year,Medium
+Washing Machine,WS-1202 12 kg,800,Sony,All Year,Low
+Washing Machine,WMT-5 5 kg,700,MarQ,All Year,Low
+Washing Machine,Automatic WM 6.5 kg,950,Bosch,All Year,Medium
+Washing Machine,Smart 10kg 1000 RPM,1200,IFB,All Year,Medium
+Washing Machine,WX1000-7A 10 kg,1300,Electrolux,All Year,Low
+Washing Machine,WTL 6.5 kg,1100,Haier,All Year,Medium
+Washing Machine,Digital 7 kg,800,LG,All Year,Low
+Washing Machine,PRO 8 kg Top Load,1100,Whirlpool,All Year,Medium
+Washing Machine,1003 10 kg,1300,Panasonic,All Year,Medium
+Washing Machine,Top-Loader 8 kg,950,Siemens,All Year,Medium
+Washing Machine,Storm 7 kg,800,IFB,All Year,Low
+Washing Machine,WM-T8010 8 kg,1200,Samsung,All Year,Medium
+Washing Machine,Compact 5 kg,700,Haier,All Year,Low
+Washing Machine,WT60E-4 6 kg,850,Whirlpool,All Year,Medium
+Washing Machine,Amelia 8 kg,1100,Bosch,All Year,Medium
+Washing Machine,Electro 7 kg,900,Electrolux,All Year,Low
+Washing Machine,Top-Load-10 10 kg,1500,Siemens,All Year,Medium
+Washing Machine,HYDRA 7 kg,1000,Godrej,All Year,Low
+Washing Machine,XPRESS 7 kg,1100,Haier,All Year,Medium
+Washing Machine,SLIM-TUB 8 kg,1200,Whirlpool,All Year,Medium
+Washing Machine,FSX-77 7 kg,1100,Siemens,All Year,Low
+Washing Machine,4D-Quick 7 kg,1000,Panasonic,All Year,Low
+Washing Machine,5.5KG 5.5 kg,800,Samsung,All Year,Low
+Washing Machine,SJ6 6 kg,900,LG,All Year,Low
+Washing Machine,Inverter 8 kg,1200,IFB,All Year,Medium
+Washing Machine,7.5 kg Top Load,1000,Whirlpool,All Year,Medium
+Washing Machine,LR85 8.5 kg,950,Bosch,All Year,Medium
+Washing Machine,XS7 7 kg,850,Siemens,All Year,Low
+Washing Machine,Turbo 8 kg,1200,Electrolux,All Year,Medium
+Washing Machine,Smart-Wash 10 kg,1300,Haier,All Year,Medium
+Washing Machine,4K 6 kg,800,Godrej,All Year,Low
+Washing Machine,600T 6 kg,750,LG,All Year,Low
+Washing Machine,W7-610 10 kg,1400,Siemens,All Year,High
+Washing Machine,AC-100 9 kg,1100,Whirlpool,All Year,Medium
+Washing Machine,Pro-wash 8 kg,1150,IFB,All Year,Medium
+Washing Machine,Smart-Wash 7 kg,1200,Panasonic,All Year,Medium
+Washing Machine,XF-101 10 kg,1300,Bosch,All Year,Medium
+Washing Machine,Deep-Clean 7 kg,950,Electrolux,All Year,Low
+Washing Machine,13K-55 5.5 kg,700,IFB,All Year,Low
+Washing Machine,WLB-8000 8 kg,1200,Whirlpool,All Year,Medium
+Washing Machine,Matic 6 kg,900,Bosch,All Year,Low
+Washing Machine,RMX-9 9 kg,1100,Siemens,All Year,Medium
+Washing Machine,Axial 7 kg,800,LG,All Year,Low
+Washing Machine,Delta 10 kg,1250,Haier,All Year,Medium
+Washing Machine,Auto-Spin 8 kg,950,Godrej,All Year,Low
+Washing Machine,SLX-10 10 kg,1300,Panasonic,All Year,Medium
+Washing Machine,WashPro 9 kg,1200,Whirlpool,All Year,Medium
+Washing Machine,1500L 7 kg,900,Bosch,All Year,Low
+Washing Machine,Tri-Wash 8 kg,1100,Siemens,All Year,Medium
+Washing Machine,Stealth 10 kg,1200,IFB,All Year,Low
+Washing Machine,Quick-wash 6 kg,750,Electrolux,All Year,Low
+Washing Machine,TurboJet 7 kg,1000,Samsung,All Year,Medium
+Washing Machine,Next-Gen 8 kg,1150,Haier,All Year,Medium
+Washing Machine,XL-5000 8 kg,1250,Whirlpool,All Year,Medium
