@@ -5,3 +5,6 @@ pymongo
 mlxtend
 Djongo
 mongoengine
+matplotlib
+seaborn
+base64
