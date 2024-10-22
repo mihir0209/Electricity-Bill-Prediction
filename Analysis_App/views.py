@@ -6,6 +6,7 @@ from django.utils.timezone import now
 import pandas as pd
 import json
 
+
 client = MongoClient("mongodb+srv://DMWUser:Mihir0209@clustermeow.pucav.mongodb.net/User_DATA?retryWrites=true&w=majority")
 db = client['User_DATA']
 username=""
