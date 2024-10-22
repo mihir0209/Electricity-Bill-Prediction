@@ -4,3 +4,4 @@ pandas
 pymongo
 mlxtend
 Djongo
+mongoengine
