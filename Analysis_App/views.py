@@ -5,11 +5,13 @@ from pymongo import MongoClient, errors
 from django.utils.timezone import now
 import pandas as pd
 import json
+
+client = MongoClient("mongodb+srv://DMWUser:Mihir0209@clustermeow.pucav.mongodb.net/User_DATA?retryWrites=true&w=majority")
+db = client['User_DATA']
+client.server_info()
 def get_db():
     try:
-        client = MongoClient("mongodb+srv://DMWUser:Mihir0209@clustermeow.pucav.mongodb.net/User_DATA?retryWrites=true&w=majority")
-        db = client['User_DATA']
-        client.server_info()
+        print("hello")
         return db
     except Exception as e:
         print("Database connection error:", e)
