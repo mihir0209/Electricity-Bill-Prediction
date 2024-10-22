@@ -1,0 +1,12 @@
+Appliance,Average Consumption,Summer,Monsoon,Winter,Year-round
+TV,40,45,40,35,40
+Fridge,150,150,150,150,150
+AC,30,40,20,5,30
+Washing Machine,10,12,10,8,10
+Microwave,2,3,2,2,2
+Oven,3,4,3,3,3
+Heater,25,0,10,50,25
+Laptop,35,40,35,30,35
+Desktop,40,45,40,35,40
+Fan,75,80,75,70,75
+Others,20,25,20,10,20

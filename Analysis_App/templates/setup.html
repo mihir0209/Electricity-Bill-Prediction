@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Setup - Energy Consumption Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">Welcome, {{ username }}!</h1>
+        
+        {% if error %}
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            {% csrf_token %}
+            <div id="appliance-fields">
+                <div class="appliance-field mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">
+                                Appliance Type
+                            </label>
+                            <select name="appliance_type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                <option value="">Select Type</option>
+                                <option value="TV">TV</option>
+                                <option value="Fridge">Fridge</option>
+                                <option value="AC">AC</option>
+                                <option value="Fan">Fan</option>
+                                <option value="Washing Machine">Washing Machine</option>
+                                <option value="Microwave" data-icon="fas fa-utensils">Microwave</option>
+                                <option value="Oven" data-icon="fas fa-fire-alt">Oven</option>
+                                <option value="Heater" data-icon="fas fa-fire">Heater</option>
+                                <option value="Laptop" data-icon="fas fa-laptop">Laptop</option>
+                                <option value="Desktop" data-icon="fas fa-desktop">Desktop</option>
+                                <option value="Other" data-icon="fas fa-question">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">
+                                Appliance Name
+                            </label>
+                            <input type="text" name="appliance_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">
+                                Wattage
+                            </label>
+                            <input type="number" name="wattage" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between mt-6">
+                <button type="button" onclick="addApplianceField()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Add Another Appliance
+                </button>
+                <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Complete Setup
+                </button>
+            </div>
+        </form>
+
+        {% if appliances %}
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mt-8">
+            <h2 class="text-xl font-bold mb-4">Your Appliances</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {% for appliance in appliances %}
+                <div class="bg-gray-50 p-4 rounded">
+                    <p class="font-bold">{{ appliance.name }}</p>
+                    <p>Type: {{ appliance.type }}</p>
+                    <p>Wattage: {{ appliance.wattage }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function addApplianceField() {
+            const template = document.querySelector('.appliance-field').cloneNode(true);
+            template.querySelectorAll('input').forEach(input => input.value = '');
+            template.querySelectorAll('select').forEach(select => select.selectedIndex = 0);
+            document.getElementById('appliance-fields').appendChild(template);
+        }
+    </script>
+</body>
+</html>
