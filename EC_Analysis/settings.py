@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-#%+p+a3+5@76sx79^6fatxq-nna5%n$7rixaasc4w00qpd)1!f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [127.0.0.1,'localhost','electricity-bill-prediction-8ec2.onrender.com']
+CSRF_TRUSTED_ORIGINS=['https://electricity-bill-prediction-8ec2.onrender.com']
 
 # Application definition
 
