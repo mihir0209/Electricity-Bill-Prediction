@@ -8,18 +8,19 @@ import json
 
 client = MongoClient("mongodb+srv://DMWUser:Mihir0209@clustermeow.pucav.mongodb.net/User_DATA?retryWrites=true&w=majority")
 db = client['User_DATA']
-client.server_info()
+username=""
 def get_db():
     try:
+        client.server_info()
         print("hello")
         return db
     except Exception as e:
         print("Database connection error:", e)
         return None
 def setup_view(request):
-    if 'user_id' not in request.session:
+    global username
+    if username is None:
         return HttpResponseRedirect('/login/')
-    username = request.session['user_id']
     db = get_db()
     if db is None:
         return render(request, 'setup.html', {'error': 'Database connection failed'})
@@ -95,9 +96,9 @@ def preprocess_data():
         return None, None
     
 def home(request):
-    if 'user_id' not in request.session:
+    global username
+    if username is None:
         return HttpResponseRedirect('/login/')
-    username = request.session['user_id']
     db = get_db()
     if db is None:
         return render(request, 'home.html', {'error': 'Database connection failed'})
@@ -199,6 +200,7 @@ def signup(request):
         return HttpResponseRedirect('/login/')
     return render(request, 'signup.html')
 def login_view(request):
+    global username
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -216,5 +218,5 @@ def login_view(request):
             return render(request, 'login.html', {'error': 'Invalid credentials'})
     return render(request, 'login.html')
 def logout_view(request):
-    request.session.flush()
+    username=""
     return HttpResponseRedirect('/login/')
