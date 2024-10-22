@@ -21,5 +21,5 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
 
 # Remove migration and collectstatic steps since you're not using a database
-# CMD ["gunicorn", "--bind", "0.0.0.0:8000", "pdf_management.wsgi:application"]
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "EC_Analysis.wsgi:application"]
+#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
