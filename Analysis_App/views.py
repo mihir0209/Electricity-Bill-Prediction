@@ -9,10 +9,10 @@ import json
 client = MongoClient("mongodb+srv://DMWUser:Mihir0209@clustermeow.pucav.mongodb.net/User_DATA?retryWrites=true&w=majority")
 db = client['User_DATA']
 username=""
+
 def get_db():
     try:
         client.server_info()
-        print("hello")
         return db
     except Exception as e:
         print("Database connection error:", e)
@@ -104,8 +104,6 @@ def home(request):
         return render(request, 'home.html', {'error': 'Database connection failed'})
     users_collection = db['users']
     user = users_collection.find_one({'username': username})
-    if not user:
-        return HttpResponseRedirect('/login/')
     try:
         current_month = now().month
         season = get_season(current_month)
@@ -154,12 +152,9 @@ def calculate_total_bill(appliances, main_data_df, season):
             appliance_data = main_data_df[main_data_df['Appliance'] == appliance['type']]
             if not appliance_data.empty:
                 seasonal_usage = appliance_data.iloc[0][season]
-                print(seasonal_usage)
                 wattage = float(appliance['wattage'])
-                print(wattage)
                 monthly_usage_kwh = (wattage * seasonal_usage) / 1000
                 total_kwh += monthly_usage_kwh
-                print(total_kwh)
         except Exception as e:
             print(f"Error calculating bill for {appliance['name']}: {e}")
     total_bill = calculate_indian_bill(total_kwh)
@@ -200,8 +195,8 @@ def signup(request):
         return HttpResponseRedirect('/login/')
     return render(request, 'signup.html')
 def login_view(request):
-    global username
     if request.method == 'POST':
+        global username 
         username = request.POST.get('username')
         password = request.POST.get('password')
         db = get_db()
@@ -209,8 +204,8 @@ def login_view(request):
             return render(request, 'login.html', {'error': 'Database connection failed'})
         users_collection = db['users']
         user = users_collection.find_one({'username': username})
-        if user is not None and check_password(password, user['password']):
-            request.session['user_id'] = user['username']
+        if username is not None and check_password(password, user['password']):
+            username = user['username']
             if user.get('first_time_login', False):
                 return HttpResponseRedirect('/setup/')
             return HttpResponseRedirect('/home/')
@@ -218,5 +213,6 @@ def login_view(request):
             return render(request, 'login.html', {'error': 'Invalid credentials'})
     return render(request, 'login.html')
 def logout_view(request):
+    global username
     username=""
     return HttpResponseRedirect('/login/')
