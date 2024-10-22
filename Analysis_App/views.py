@@ -5,7 +5,9 @@ from pymongo import MongoClient, errors
 from django.utils.timezone import now
 import pandas as pd
 import json
-
+import matplotlib.pyplot as plt
+import base64
+from io import BytesIO
 
 client = MongoClient("mongodb+srv://DMWUser:Mihir0209@clustermeow.pucav.mongodb.net/User_DATA?retryWrites=true&w=majority")
 db = client['User_DATA']
@@ -95,16 +97,19 @@ def preprocess_data():
     except Exception as e:
         print("Data preprocessing error:", e)
         return None, None
-    
+
 def home(request):
     global username
     if username is None:
         return HttpResponseRedirect('/login/')
+    
     db = get_db()
     if db is None:
         return render(request, 'home.html', {'error': 'Database connection failed'})
+    
     users_collection = db['users']
     user = users_collection.find_one({'username': username})
+
     try:
         current_month = now().month
         season = get_season(current_month)
@@ -116,18 +121,43 @@ def home(request):
                 'message': 'Please add your appliances in the setup page.',
                 'season': season
             })
+        
+        # Preprocess the data
         rules, main_data_df = preprocess_data()
         if rules is None or main_data_df is None:
             return render(request, 'home.html', {'error': 'Data processing failed'})
+        
         usage_suggestion = calculate_usage_suggestions(appliances, main_data_df, season)
         total_bill = calculate_total_bill(appliances, main_data_df, season)
+        
+        # Generate a dynamic plot
+        fig, ax = plt.subplots()
+        appliance_names = [appliance['name'] for appliance in appliances]
+        appliance_wattages = [appliance['wattage'] for appliance in appliances]
+        
+        ax.barh(appliance_names, appliance_wattages, color='skyblue')
+        ax.set_xlabel('Wattage (Watts)')
+        ax.set_title('Appliance Usage Visualization')
+        
+        # Save the plot to a BytesIO object and convert to base64
+        buffer = BytesIO()
+        plt.savefig(buffer, format='png')
+        buffer.seek(0)
+        image_png = buffer.getvalue()
+        buffer.close()
+        
+        image_base64 = base64.b64encode(image_png).decode('utf-8')
+        plt.close()  # Close the plot after use to free memory
+
         return render(request, 'home.html', {
             'username': username,
             'email': user.get('email', ''),
             'usage_suggestion': usage_suggestion,
             'season': season,
-            'total_bill': total_bill
+            'total_bill': total_bill,
+            'plot_image': image_base64  # Pass the image to the template
         })
+    
     except Exception as e:
         print("Home page error:", e)
         return render(request, 'home.html', {
