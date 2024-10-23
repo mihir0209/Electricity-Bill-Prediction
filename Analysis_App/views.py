@@ -205,6 +205,7 @@ def get_season(month):
         return 'Year-round'
 def signup(request):
     if request.method == 'POST':
+        global username
         username = request.POST.get('username').strip()
         email = request.POST.get('email').strip()
         password = request.POST.get('password').strip()
@@ -222,7 +223,6 @@ def signup(request):
             'password': hashed_password,
             'first_time_login': True
         })
-        request.session['user_id'] = username
         return HttpResponseRedirect('/login/')
     return render(request, 'signup.html')
 def login_view(request):
