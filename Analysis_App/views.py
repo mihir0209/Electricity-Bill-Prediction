@@ -5,9 +5,10 @@ from pymongo import MongoClient, errors
 from django.utils.timezone import now
 import pandas as pd
 import json
-import matplotlib.pyplot as plt
+
 import base64
 from io import BytesIO
+from django.http import JsonResponse
 
 client = MongoClient("mongodb+srv://DMWUser:Mihir0209@clustermeow.pucav.mongodb.net/User_DATA?retryWrites=true&w=majority")
 db = client['User_DATA']
@@ -29,6 +30,14 @@ def setup_view(request):
         return render(request, 'setup.html', {'error': 'Database connection failed'})
     users_collection = db['users']
     user = users_collection.find_one({'username': username})
+     # Load appliance data and filter columns
+    try:
+        appliance_df = pd.read_csv('DATAAA/ApplianceUsageData.csv', usecols=["Appliance", "Model", "Wattage"])
+        appliance_types = appliance_df["Appliance"].unique().tolist()
+    except Exception as e:
+        print("Error loading appliance data:", e)
+        appliance_types = []
+        appliance_df = pd.DataFrame()
     if request.method == 'POST':
         try:
             appliance_data = []
@@ -39,15 +48,13 @@ def setup_view(request):
                 if name and wattage:
                     try:
                         wattage_val = float(wattage)
-                        if app_type == 'AC':
-                            wattage_val = convert_ac_ton_to_watts(wattage_val)
                         appliance_data.append({
                             'name': name,
                             'wattage': wattage_val,
                             'type': app_type
                         })
                     except ValueError:
-                        continue
+                        print("Ulalal")
             users_collection.update_one(
                 {'username': username},
                     {
@@ -69,7 +76,9 @@ def setup_view(request):
             })
     return render(request, 'setup.html', {
         'username': username,
-        'appliances': user.get('appliances', [])
+        'appliances': user.get('appliances', []),
+        'appliance_types': appliance_types,
+        'appliance_data': appliance_df.to_dict(orient="records")
     })
 def calculate_indian_bill(total_kwh):
     try:
@@ -128,8 +137,11 @@ def home(request):
             return render(request, 'home.html', {'error': 'Data processing failed'})
         
         usage_suggestion = calculate_usage_suggestions(appliances, main_data_df, season)
-        total_bill = calculate_total_bill(appliances, main_data_df, season)
-        
+        total_bill, price_distribution = calculate_total_bill(appliances, main_data_df, season)
+        print(price_distribution)
+        import matplotlib.pyplot as plt
+        import matplotlib 
+        matplotlib.use('Agg')
         # Generate a dynamic plot
         fig, ax = plt.subplots()
         appliance_names = [appliance['name'] for appliance in appliances]
@@ -138,24 +150,47 @@ def home(request):
         ax.barh(appliance_names, appliance_wattages, color='skyblue')
         ax.set_xlabel('Wattage (Watts)')
         ax.set_title('Appliance Usage Visualization')
-        
+        ax.tick_params(axis='y', labelsize=10)
+        plt.subplots_adjust(left=0.25)  # Adds padding on the left for long labels
+
         # Save the plot to a BytesIO object and convert to base64
         buffer = BytesIO()
-        plt.savefig(buffer, format='png')
+        plt.savefig(buffer, format='png',bbox_inches='tight')
         buffer.seek(0)
         image_png = buffer.getvalue()
         buffer.close()
         
         image_base64 = base64.b64encode(image_png).decode('utf-8')
         plt.close()  # Close the plot after use to free memory
+        
+        fig, ax = plt.subplots()
+        appliance_names = [appliance['name'] for appliance in appliances]
+        prices = [calculate_indian_bill(kwh) for kwh in price_distribution]
+        
+        ax.barh(appliance_names, prices, color='skyblue')
+        ax.set_xlabel('Individual Price (INR)')
+        ax.set_title('Appliance price distribution visualisation')
+        ax.tick_params(axis='y', labelsize=10)
+        plt.subplots_adjust(left=0.25)  # Adds padding on the left for long labels
 
+        # Save the plot to a BytesIO object and convert to base64
+        buffer = BytesIO()
+        plt.savefig(buffer, format='png',bbox_inches='tight')
+        buffer.seek(0)
+        image_png = buffer.getvalue()
+        buffer.close()
+        
+        image_base64_1 = base64.b64encode(image_png).decode('utf-8')
+        plt.close()  # Close the plot after use to free memory
+        
         return render(request, 'home.html', {
             'username': username,
             'email': user.get('email', ''),
             'usage_suggestion': usage_suggestion,
             'season': season,
             'total_bill': total_bill,
-            'plot_image': image_base64  # Pass the image to the template
+            'plot_image': image_base64,
+            'plot_image1':image_base64_1    # Pass the image to the template
         })
     
     except Exception as e:
@@ -178,6 +213,7 @@ def calculate_usage_suggestions(appliances, main_data_df, season):
     return usage_suggestion
 def calculate_total_bill(appliances, main_data_df, season):
     total_kwh = 0
+    price_distribution=[]
     for appliance in appliances:
         try:
             appliance_data = main_data_df[main_data_df['Appliance'] == appliance['type']]
@@ -186,13 +222,12 @@ def calculate_total_bill(appliances, main_data_df, season):
                 wattage = float(appliance['wattage'])
                 monthly_usage_kwh = (wattage * seasonal_usage) / 1000
                 total_kwh += monthly_usage_kwh
+                price_distribution.append(monthly_usage_kwh)
         except Exception as e:
             print(f"Error calculating bill for {appliance['name']}: {e}")
     total_bill = calculate_indian_bill(total_kwh)
-    return round(total_bill, 2)
+    return round(total_bill, 2), price_distribution
 
-def convert_ac_ton_to_watts(tons):
-    return int(tons * 3516)
 
 def get_season(month):
     if month in [11, 12, 1]:

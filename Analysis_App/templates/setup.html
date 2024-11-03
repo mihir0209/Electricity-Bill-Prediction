@@ -18,37 +18,29 @@
             {% csrf_token %}
             <div id="appliance-fields">
                 <div class="appliance-field mb-6">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <!-- Appliance Type Dropdown -->
                         <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2">
-                                Appliance Type
-                            </label>
-                            <select name="appliance_type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                <option value="">Select Type</option>
-                                <option value="TV">TV</option>
-                                <option value="Fridge">Fridge</option>
-                                <option value="AC">AC</option>
-                                <option value="Fan">Fan</option>
-                                <option value="Washing Machine">Washing Machine</option>
-                                <option value="Microwave" data-icon="fas fa-utensils">Microwave</option>
-                                <option value="Oven" data-icon="fas fa-fire-alt">Oven</option>
-                                <option value="Heater" data-icon="fas fa-fire">Heater</option>
-                                <option value="Laptop" data-icon="fas fa-laptop">Laptop</option>
-                                <option value="Desktop" data-icon="fas fa-desktop">Desktop</option>
-                                <option value="Other" data-icon="fas fa-question">Other</option>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Appliance Type</label>
+                            <select name="appliance_type" onchange="updateModelOptions(this)" class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none">
+                                <option value="">Select Appliance Type</option>
+                                {% for type in appliance_types %}
+                                    <option value="{{ type }}">{{ type }}</option>
+                                {% endfor %}
                             </select>
                         </div>
+                        
+                        <!-- Model (Auto-Suggested Dropdown) -->
                         <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2">
-                                Appliance Name
-                            </label>
-                            <input type="text" name="appliance_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Model</label>
+                            <input type="text" name="appliance_name" list="model-list" oninput="updateWattage(this)" class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none">
+                            <datalist id="model-list"></datalist>
                         </div>
+
+                        <!-- Wattage Field (Auto-Filled) -->
                         <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2">
-                                Wattage
-                            </label>
-                            <input type="number" name="wattage" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Wattage</label>
+                            <input type="number" name="wattage" readonly class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                         </div>
                     </div>
                 </div>
@@ -63,24 +55,35 @@
                 </button>
             </div>
         </form>
-
-        {% if appliances %}
-        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mt-8">
-            <h2 class="text-xl font-bold mb-4">Your Appliances</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for appliance in appliances %}
-                <div class="bg-gray-50 p-4 rounded">
-                    <p class="font-bold">{{ appliance.name }}</p>
-                    <p>Type: {{ appliance.type }}</p>
-                    <p>Wattage: {{ appliance.wattage }}</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
     </div>
 
     <script>
+        const applianceData = {{ appliance_data|safe }};
+
+        function updateModelOptions(selectElement) {
+            const type = selectElement.value;
+            const modelList = document.getElementById("model-list");
+            modelList.innerHTML = '';
+
+            applianceData.forEach(appliance => {
+                if (appliance["Appliance"] === type) {
+                    const option = document.createElement("option");
+                    option.value = appliance["Model"];
+                    modelList.appendChild(option);
+                }
+            });
+        }
+
+        function updateWattage(inputElement) {
+            const model = inputElement.value;
+            const wattageInput = inputElement.closest('.grid').querySelector('input[name="wattage"]');
+            
+            const appliance = applianceData.find(appl => appl["Model"] === model);
+            if (appliance) {
+                wattageInput.value = appliance["Wattage"];
+            }
+        }
+
         function addApplianceField() {
             const template = document.querySelector('.appliance-field').cloneNode(true);
             template.querySelectorAll('input').forEach(input => input.value = '');
