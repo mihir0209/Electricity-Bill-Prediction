@@ -39,6 +39,22 @@ def setup_view(request):
         appliance_types = []
         appliance_df = pd.DataFrame()
     if request.method == 'POST':
+        delete_appliance_name = request.POST.get('delete_appliance_name')
+        delete_appliance_type = request.POST.get('delete_appliance_type')
+
+        if delete_appliance_name and delete_appliance_type:
+            # Remove the appliance from the user's list
+            users_collection.update_one(
+                {'username': username},
+                {'$pull': {
+                    'appliances': {
+                        'name': delete_appliance_name,
+                        'type': delete_appliance_type
+                    }
+                }}
+            )
+            # Reload the page after deletion
+            return HttpResponseRedirect('/setup/')
         try:
             appliance_data = []
             appliance_names = request.POST.getlist('appliance_name')
