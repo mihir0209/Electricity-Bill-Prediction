@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Energy Consumption Analyzer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
 </head>
-<body class="bg-gray-100">
+<body class="bg-gradient-to-r from-blue-500 to-blue-300">
     <div class="container mx-auto px-4 py-8">
         <div class="flex justify-between items-center mb-8">
             <div>
-                <h1 class="text-4xl font-bold text-blue-600">Welcome, {{ username }}</h1>
-                <p class="text-gray-500 text-lg">{{ email }}</p>
+                <h1 class="text-4xl font-bold text-white">Welcome, {{ username }}</h1>
+                <p class="text-gray-200 text-lg">{{ email }}</p>
             </div>
             <a href="/logout/" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow-md transition duration-300 ease-in-out transform hover:scale-105">
                 Logout
@@ -33,7 +34,8 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Suggested Usage Card -->
-            <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105">
+            <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 relative">
+                <i class="fas fa-lightbulb absolute top-4 left-4 text-blue-500 text-xl"></i> <!-- Icon for usage suggestion -->
                 <h2 class="text-xl font-semibold mb-4 text-blue-500">Suggested Usage for {{ season }}</h2>
                 {% if usage_suggestion %}
                 <ul class="space-y-3">
@@ -50,7 +52,8 @@
             </div>
 
             <!-- Predicted Monthly Bill Card -->
-            <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105">
+            <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 relative">
+                <i class="fas fa-money-bill-wave absolute top-4 left-4 text-green-500 text-xl"></i> <!-- Icon for predicted bill -->
                 <h2 class="text-xl font-semibold mb-4 text-green-500">Predicted Monthly Bill</h2>
                 <div class="text-center">
                     <span class="text-5xl font-bold text-green-600">₹{{ total_bill|floatformat:2 }}</span>
@@ -64,7 +67,10 @@
                 Setup Appliances
             </a>
         </div>
-        <div class="bg-white shadow-lg rounded-lg p-6 mt-8 transition-transform transform hover:scale-105">
+
+        <!-- Appliance Usage Visualization Card -->
+        <div class="bg-white shadow-lg rounded-lg p-6 mt-8 transition-transform transform hover:scale-105 relative">
+            <i class="fas fa-chart-line absolute top-4 left-4 text-purple-500 text-xl"></i> <!-- Icon for visualization -->
             <h2 class="text-xl font-semibold mb-4 text-purple-500">Appliance Usage Visualization</h2>
             {% if plot_image %}
             <div class="flex justify-center">
@@ -74,8 +80,13 @@
             <p class="text-gray-600">No data available for visualization.</p>
             {% endif %}
         </div>
-        <br> <br> <br>
-        <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105">
+
+        <!-- Price Distribution Card -->
+        <br> 
+        <br> 
+        <br>
+        <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 relative">
+            <i class="fas fa-chart-pie absolute top-4 left-4 text-green-500 text-xl"></i> <!-- Icon for price distribution -->
             <h2 class="text-xl font-semibold mb-4 text-green-500">Price Distribution for Appliances</h2>
             {% if plot_image1 %}
             <div class="flex justify-center">
@@ -85,7 +96,6 @@
             <p class="text-gray-600">No data available for price distribution.</p>
             {% endif %}
         </div>
-        
 
     </div>
 </body>
