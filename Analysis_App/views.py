@@ -111,7 +111,7 @@ def preprocess_data():
         main_data_df = pd.read_csv('DATAAA/MainDataAVG.csv')
         appliance_matrix = pd.get_dummies(data_df['Appliance'])
         frequent_itemsets = apriori(appliance_matrix, min_support=0.1, use_colnames=True)
-        rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
+        rules = association_rules(frequent_itemsets, metric="lift", min_threshold=0)
         return rules, main_data_df
     except Exception as e:
         print("Data preprocessing error:", e)
@@ -137,11 +137,12 @@ def home(request):
                 'season': season
             })
         rules, main_data_df = preprocess_data()
-        if rules is None or main_data_df is None:
+        # print(*rules)
+        if main_data_df is None:
             return render(request, 'home.html', {'error': 'Data processing failed'})
         usage_suggestion = calculate_usage_suggestions(appliances, main_data_df, season)
         total_bill, price_distribution = calculate_total_bill(appliances, main_data_df, season)
-        print(price_distribution)
+        # print(price_distribution)
         import matplotlib.pyplot as plt
         import matplotlib
         matplotlib.use('Agg')
