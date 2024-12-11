@@ -111,7 +111,8 @@ def preprocess_data():
         main_data_df = pd.read_csv('DATAAA/MainDataAVG.csv')
         appliance_matrix = pd.get_dummies(data_df['Appliance'])
         frequent_itemsets = apriori(appliance_matrix, min_support=0.1, use_colnames=True)
-        rules = association_rules(frequent_itemsets, metric="lift", min_threshold=0)
+        #rules = association_rules(frequent_itemsets, metric="lift", min_threshold=0)
+        rules=0
         return rules, main_data_df
     except Exception as e:
         print("Data preprocessing error:", e)
