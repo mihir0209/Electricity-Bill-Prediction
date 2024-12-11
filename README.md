@@ -1,6 +1,4 @@
-# Electricity-Bill-Prediction
-
-![Project Banner](https://via.placeholder.com/1200x300.png?text=Electricity+Bill+Prediction)
+### Electricity-Bill-Prediction
 
 ## Overview
 The **Electricity-Bill-Prediction** project predicts your monthly electricity bill by analyzing various factors such as:
@@ -49,7 +47,7 @@ This application leverages data-driven insights to provide accurate predictions,
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/Electricity-Bill-Prediction.git
+   git clone https://github.com/mihir0209/Electricity-Bill-Prediction.git
    cd Electricity-Bill-Prediction
    ```
 
