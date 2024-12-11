@@ -5,15 +5,12 @@ from pymongo import MongoClient, errors
 from django.utils.timezone import now
 import pandas as pd
 import json
-
 import base64
 from io import BytesIO
 from django.http import JsonResponse
-
 client = MongoClient("mongodb+srv://DMWUser:Mihir0209@clustermeow.pucav.mongodb.net/User_DATA?retryWrites=true&w=majority")
 db = client['User_DATA']
 username=""
-
 def get_db():
     try:
         client.server_info()
@@ -30,10 +27,10 @@ def setup_view(request):
         return render(request, 'setup.html', {'error': 'Database connection failed'})
     users_collection = db['users']
     user = users_collection.find_one({'username': username})
-     # Load appliance data and filter columns
     try:
         appliance_df = pd.read_csv('DATAAA/ApplianceUsageData.csv', usecols=["Appliance", "Model", "Wattage"])
-        appliance_types = appliance_df["Appliance"].unique().tolist()
+        # appliance_types = appliance_df["Appliance"].unique().tolist()
+        appliance_types=['AC', 'Desktop', 'Fridge','Fan','Heater', 'Laptop', 'Microwave', 'Oven', 'TV', 'Washing Machine']
     except Exception as e:
         print("Error loading appliance data:", e)
         appliance_types = []
@@ -41,9 +38,7 @@ def setup_view(request):
     if request.method == 'POST':
         delete_appliance_name = request.POST.get('delete_appliance_name')
         delete_appliance_type = request.POST.get('delete_appliance_type')
-
         if delete_appliance_name and delete_appliance_type:
-            # Remove the appliance from the user's list
             users_collection.update_one(
                 {'username': username},
                 {'$pull': {
@@ -53,7 +48,6 @@ def setup_view(request):
                     }
                 }}
             )
-            # Reload the page after deletion
             return HttpResponseRedirect('/setup/')
         try:
             appliance_data = []
@@ -116,25 +110,21 @@ def preprocess_data():
         data_df = pd.read_csv('DATAAA/ApplianceUsageData.csv')
         main_data_df = pd.read_csv('DATAAA/MainDataAVG.csv')
         appliance_matrix = pd.get_dummies(data_df['Appliance'])
-        frequent_itemsets = apriori(appliance_matrix, min_support=0.3, use_colnames=True)
+        frequent_itemsets = apriori(appliance_matrix, min_support=0.1, use_colnames=True)
         rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
         return rules, main_data_df
     except Exception as e:
         print("Data preprocessing error:", e)
         return None, None
-
 def home(request):
     global username
     if username is None:
         return HttpResponseRedirect('/login/')
-    
     db = get_db()
     if db is None:
         return render(request, 'home.html', {'error': 'Database connection failed'})
-    
     users_collection = db['users']
     user = users_collection.find_one({'username': username})
-
     try:
         current_month = now().month
         season = get_season(current_month)
@@ -146,59 +136,45 @@ def home(request):
                 'message': 'Please add your appliances in the setup page.',
                 'season': season
             })
-        
-        # Preprocess the data
         rules, main_data_df = preprocess_data()
         if rules is None or main_data_df is None:
             return render(request, 'home.html', {'error': 'Data processing failed'})
-        
         usage_suggestion = calculate_usage_suggestions(appliances, main_data_df, season)
         total_bill, price_distribution = calculate_total_bill(appliances, main_data_df, season)
         print(price_distribution)
         import matplotlib.pyplot as plt
-        import matplotlib 
+        import matplotlib
         matplotlib.use('Agg')
-        # Generate a dynamic plot
         fig, ax = plt.subplots()
         appliance_names = [appliance['name'] for appliance in appliances]
         appliance_wattages = [appliance['wattage'] for appliance in appliances]
-        
         ax.barh(appliance_names, appliance_wattages, color='skyblue')
         ax.set_xlabel('Wattage (Watts)')
         ax.set_title('Appliance Usage Visualization')
         ax.tick_params(axis='y', labelsize=10)
-        plt.subplots_adjust(left=0.25)  # Adds padding on the left for long labels
-
-        # Save the plot to a BytesIO object and convert to base64
+        plt.subplots_adjust(left=0.25)
         buffer = BytesIO()
         plt.savefig(buffer, format='png',bbox_inches='tight')
         buffer.seek(0)
         image_png = buffer.getvalue()
         buffer.close()
-        
         image_base64 = base64.b64encode(image_png).decode('utf-8')
-        plt.close()  # Close the plot after use to free memory
-        
+        plt.close()
         fig, ax = plt.subplots()
         appliance_names = [appliance['name'] for appliance in appliances]
         prices = [calculate_indian_bill(kwh) for kwh in price_distribution]
-        
         ax.barh(appliance_names, prices, color='skyblue')
         ax.set_xlabel('Individual Price (INR)')
         ax.set_title('Appliance price distribution visualisation')
         ax.tick_params(axis='y', labelsize=10)
-        plt.subplots_adjust(left=0.25)  # Adds padding on the left for long labels
-
-        # Save the plot to a BytesIO object and convert to base64
+        plt.subplots_adjust(left=0.25)
         buffer = BytesIO()
         plt.savefig(buffer, format='png',bbox_inches='tight')
         buffer.seek(0)
         image_png = buffer.getvalue()
         buffer.close()
-        
         image_base64_1 = base64.b64encode(image_png).decode('utf-8')
-        plt.close()  # Close the plot after use to free memory
-        
+        plt.close()
         return render(request, 'home.html', {
             'username': username,
             'email': user.get('email', ''),
@@ -206,9 +182,8 @@ def home(request):
             'season': season,
             'total_bill': total_bill,
             'plot_image': image_base64,
-            'plot_image1':image_base64_1    # Pass the image to the template
+            'plot_image1':image_base64_1
         })
-    
     except Exception as e:
         print("Home page error:", e)
         return render(request, 'home.html', {
@@ -243,8 +218,6 @@ def calculate_total_bill(appliances, main_data_df, season):
             print(f"Error calculating bill for {appliance['name']}: {e}")
     total_bill = calculate_indian_bill(total_kwh)
     return round(total_bill, 2), price_distribution
-
-
 def get_season(month):
     if month in [11, 12, 1]:
         return 'Winter'
@@ -278,7 +251,7 @@ def signup(request):
     return render(request, 'signup.html')
 def login_view(request):
     if request.method == 'POST':
-        global username 
+        global username
         username = request.POST.get('username')
         password = request.POST.get('password')
         db = get_db()
