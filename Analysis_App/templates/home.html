@@ -6,8 +6,118 @@
     <title>Home - Energy Consumption Analyzer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        .container2 {
+          width: 100%;
+          height: 100%;
+          --s: 200px; 
+          --c1: #1d1d1d;
+          --c2: #4e4f51;
+          --c3: #3c3c3c;
+
+          background: repeating-conic-gradient(
+                from 30deg,
+                #0000 0 120deg,
+                var(--c3) 0 180deg
+              )
+              calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+            repeating-conic-gradient(
+              from 30deg,
+              var(--c1) 0 60deg,
+              var(--c2) 0 120deg,
+              var(--c3) 0 180deg
+            );
+          background-size: var(--s) calc(var(--s) * 0.577);
+        }
+        
+        .card2 {
+         border-radius: 30px;
+         background: #212121;
+         box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                     -15px -15px 30px rgb(60, 60, 60);
+        }
+        
+        .card {
+          position: relative;
+          width: 100%;
+          min-height: 350px;
+          border-radius: 14px;
+          z-index: 1;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        }
+
+        .bg {
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          width: calc(100% - 10px);
+          height: calc(100% - 10px);
+          z-index: 2;
+          background: rgba(255, 255, 255, .95);
+          backdrop-filter: blur(24px);
+          border-radius: 10px;
+          overflow: hidden;
+          outline: 2px solid white;
+        }
+
+        .blob {
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 50%;
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          opacity: 1;
+          filter: blur(12px);
+          animation: blob-bounce 5s infinite ease;
+        }
+        
+        .card-purple .blob {
+          background-color: #8A2BE2;
+        }
+        
+        .card-green .blob {
+          background-color: #00b347;
+        }
+
+        @keyframes blob-bounce {
+          0% {
+            transform: translate(-100%, -100%) translate3d(0, 0, 0);
+          }
+
+          25% {
+            transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+          }
+
+          50% {
+            transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+          }
+
+          75% {
+            transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+          }
+
+          100% {
+            transform: translate(-100%, -100%) translate3d(0, 0, 0);
+          }
+        }
+        
+        .card-content {
+          position: relative;
+          z-index: 3;
+          width: 100%;
+          padding: 1.5rem;
+        }
+    </style>
 </head>
 <body class="bg-gradient-to-r from-blue-500 to-blue-300">
+    <div class="container2">
     <div class="container mx-auto px-4 py-8">
         <div class="flex justify-between items-center mb-8">
             <div>
@@ -32,10 +142,9 @@
         </div>
         {% endif %}
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Suggested Usage Card -->
+        <div class="card2 grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
             <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 relative">
-                <i class="fas fa-lightbulb absolute top-4 left-4 text-blue-500 text-xl"></i> <!-- Icon for usage suggestion -->
+                <i class="fas fa-lightbulb absolute top-4 left-4 text-blue-500 text-xl"></i> 
                 <h2 class="text-xl font-semibold mb-4 text-blue-500">Suggested Usage for {{ season }}</h2>
                 {% if usage_suggestion %}
                 <ul class="space-y-3">
@@ -51,9 +160,8 @@
                 {% endif %}
             </div>
 
-            <!-- Predicted Monthly Bill Card -->
             <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 relative">
-                <i class="fas fa-money-bill-wave absolute top-4 left-4 text-green-500 text-xl"></i> <!-- Icon for predicted bill -->
+                <i class="fas fa-money-bill-wave absolute top-4 left-4 text-green-500 text-xl"></i>
                 <h2 class="text-xl font-semibold mb-4 text-green-500">Predicted Monthly Bill</h2>
                 <div class="text-center">
                     <span class="text-5xl font-bold text-green-600">₹{{ total_bill|floatformat:2 }}</span>
@@ -61,42 +169,49 @@
             </div>
         </div>
 
-        <!-- Setup Appliances Button -->
         <div class="mt-8 text-center">
             <a href="/setup/" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
                 Setup Appliances
             </a>
         </div>
-
-        <!-- Appliance Usage Visualization Card -->
-        <div class="bg-white shadow-lg rounded-lg p-6 mt-8 transition-transform transform hover:scale-105 relative">
-            <i class="fas fa-chart-line absolute top-4 left-4 text-purple-500 text-xl"></i> <!-- Icon for visualization -->
-            <h2 class="text-xl font-semibold mb-4 text-purple-500">Appliance Usage Visualization</h2>
-            {% if plot_image %}
-            <div class="flex justify-center">
-                <img src="data:image/png;base64,{{ plot_image }}" alt="Appliance Usage Plot" class="rounded-lg shadow-md">
+<br> <br> <br>
+        <div class="mt-8">
+            <div class="card card-purple">
+                <div class="bg"></div>
+                <div class="blob"></div>
+                <div class="card-content">
+                    <i class="fas fa-chart-line text-purple-500 text-xl mb-2"></i>
+                    <h2 class="text-xl font-semibold mb-4 text-purple-500">Appliance Usage Visualization</h2>
+                    {% if plot_image %}
+                    <div class="flex justify-center">
+                        <img src="data:image/png;base64,{{ plot_image }}" alt="Appliance Usage Plot" class="rounded-lg shadow-md w-full">
+                    </div>
+                    {% else %}
+                    <p class="text-gray-600">No data available for visualization.</p>
+                    {% endif %}
+                </div>
             </div>
-            {% else %}
-            <p class="text-gray-600">No data available for visualization.</p>
-            {% endif %}
         </div>
 
-        <!-- Price Distribution Card -->
-        <br> 
-        <br> 
-        <br>
-        <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 relative">
-            <i class="fas fa-chart-pie absolute top-4 left-4 text-green-500 text-xl"></i> <!-- Icon for price distribution -->
-            <h2 class="text-xl font-semibold mb-4 text-green-500">Price Distribution for Appliances</h2>
-            {% if plot_image1 %}
-            <div class="flex justify-center">
-                <img src="data:image/png;base64,{{ plot_image1 }}" alt="Price Distribution Plot" class="rounded-lg shadow-md">
+        <div class="mt-8 mb-8">
+            <div class="card card-green">
+                <div class="bg"></div>
+                <div class="blob"></div>
+                <div class="card-content">
+                    <i class="fas fa-chart-pie text-green-500 text-xl mb-2"></i>
+                    <h2 class="text-xl font-semibold mb-4 text-green-500">Price Distribution for Appliances</h2>
+                    {% if plot_image1 %}
+                    <div class="flex justify-center">
+                        <img src="data:image/png;base64,{{ plot_image1 }}" alt="Price Distribution Plot" class="rounded-lg shadow-md w-full">
+                    </div>
+                    {% else %}
+                    <p class="text-gray-600">No data available for price distribution.</p>
+                    {% endif %}
+                </div>
             </div>
-            {% else %}
-            <p class="text-gray-600">No data available for price distribution.</p>
-            {% endif %}
         </div>
 
     </div>
+</div>
 </body>
 </html>

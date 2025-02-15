@@ -7,168 +7,453 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Base styling */
-        * {
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #4b6cb7, #182848);
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
         }
+
+        .container2 {
+            width: 100%;
+            height: 100%;
+            --s: 200px;
+            --c1: #1d1d1d;
+            --c2: #4e4f51;
+            --c3: #3c3c3c;
+            background: repeating-conic-gradient(
+                    from 30deg,
+                    #0000 0 120deg,
+                    var(--c3) 0 180deg
+            )
+            calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+            repeating-conic-gradient(
+                    from 30deg,
+                    var(--c1) 0 60deg,
+                    var(--c2) 0 120deg,
+                    var(--c3) 0 180deg
+            );
+            background-size: var(--s) calc(var(--s) * 0.577);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
         .heading-container {
-            position: absolute; /* Changed to absolute for positioning */
-            top: 20px; /* Distance from the top */
-            right: 20px; /* Distance from the right */
-            text-align: right; /* Align text to the right */
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+            z-index: 1;
         }
 
         .heading-container h1 {
             font-weight: 700;
-            font-size: 28px; /* Slightly larger font size for emphasis */
-            color: #00c6ff; /* Match with the button color */
+            font-size: 28px;
+            color: #00c6ff;
         }
 
         .heading-container i {
-            margin-right: 8px; /* Space between icon and text */
-            color: #00c6ff; /* Match icon color with text */
+            margin-right: 8px;
+            color: #00c6ff;
         }
 
-        /* Form container */
-        .form-container {
-            background-color: #1c1f2a;
-            padding: 40px;
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            padding: 25px;
             border-radius: 12px;
-            width: 360px;
-            max-width: 90%;
+            background-color: #1c1f2a;
+            color: #fff;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 2;
+            margin: 120px auto 20px;
+        }
+
+        .title {
+            font-size: 26px;
+            font-weight: 600;
+            color: #00bfff;
             text-align: center;
         }
 
-        /* Heading */
-        h2 {
-            font-weight: 700;
-            font-size: 24px;
-            margin-bottom: 20px;
+        .message {
+            font-size: 14px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Form input fields */
-        .form-group {
+        .flex {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .flex {
+                flex-direction: column;
+            }
+        }
+
+        .form label {
             position: relative;
-            margin-bottom: 20px;
-        }
-
-        .form-group i {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #4b6cb7;
-        }
-
-        input[type="text"], input[type="email"], input[type="password"] {
             width: 100%;
-            padding: 12px 40px;
-            font-size: 16px;
+        }
+
+        .form label .input {
             background-color: #262b3f;
             color: #cfcfcf;
+            width: 100%;
+            padding: 18px 10px 10px;
             border: 1px solid #4b6cb7;
             border-radius: 8px;
+            font-size: 16px;
             outline: none;
-            transition: all 0.3s ease;
+            box-sizing: border-box;
         }
 
-        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+        .form label .input:focus {
             border-color: #00c6ff;
             color: #fff;
         }
 
-        /* Submit button */
-        input[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background-color: #00c6ff;
-            border: none;
-            color: #fff;
-            font-size: 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 500;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
+        .form label span {
+            position: absolute;
+            left: 10px;
+            top: 14px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            transition: 0.3s;
         }
 
-        input[type="submit"]:hover {
+        .form label .input:focus + span,
+        .form label .input:valid + span {
+            top: 5px;
+            font-size: 10px;
+            color: #00c6ff;
+        }
+
+        .submit {
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 18px;
+            background-color: #00c6ff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit:hover {
             background-color: #0072ff;
         }
 
-        /* Error message styling */
         .error-message {
             color: #ff5c5c;
             font-size: 14px;
-            margin-bottom: 15px;
+            text-align: center;
         }
 
-        /* Footer link */
-        .form-footer {
-            margin-top: 15px;
+        .signin {
+            text-align: center;
             font-size: 14px;
         }
 
-        .form-footer a {
-            color: #00c6ff;
+        .signin a {
+            color: #00bfff;
             text-decoration: none;
             font-weight: 500;
         }
 
-        .form-footer a:hover {
+        .signin a:hover {
             text-decoration: underline;
+        }
+
+        .btn-donate {
+            --clr-font-main: hsla(0 0% 20% / 100);
+            --btn-bg-1: hsla(194 100% 69% / 1);
+            --btn-bg-2: hsla(217 100% 56% / 1);
+            --btn-bg-color: hsla(360 100% 100% / 1);
+            --radii: 0.5em;
+            cursor: pointer;
+            padding: 0.9em 1.4em;
+            min-width: 120px;
+            min-height: 44px;
+            font-size: var(--size, 1rem);
+            font-weight: 500;
+            transition: 0.8s;
+            background-size: 280% auto;
+            background-image: linear-gradient(
+              325deg,
+              var(--btn-bg-2) 0%,
+              var(--btn-bg-1) 55%,
+              var(--btn-bg-2) 90%
+            );
+            border: none;
+            border-radius: var(--radii);
+            color: var(--btn-bg-color);
+            box-shadow:
+              0px 0px 20px rgba(71, 184, 255, 0.5),
+              0px 5px 5px -1px rgba(58, 125, 233, 0.25),
+              inset 4px 4px 8px rgba(175, 230, 255, 0.5),
+              inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+            
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+          
+        .btn-donate:hover {
+            background-position: right top;
+        }
+          
+        .btn-donate:is(:focus, :focus-visible, :active) {
+            outline: none;
+            box-shadow:
+              0 0 0 3px var(--btn-bg-color),
+              0 0 0 6px var(--btn-bg-2);
+        }
+          
+        @media (prefers-reduced-motion: reduce) {
+            .btn-donate {
+              transition: linear;
+            }
+        }
+
+        .parent {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 210px;
+            max-width: 90vw;
+            padding: 6px;
+            perspective: 1000px;
+            z-index: 100;
+        }
+          
+        @media (min-width: 768px) {
+            .parent {
+                left: 20px;
+                right: auto;
+            }
+        }
+
+        .card {
+            position: relative;
+            padding-top: 7px;
+            border: 3px solid rgb(255, 255, 255);
+            transform-style: preserve-3d;
+            background: linear-gradient(135deg,#0000 18.75%,#f3f3f3 0 31.25%,#0000 0),
+                repeating-linear-gradient(45deg,#f3f3f3 -6.25% 6.25%,#ffffff 0 18.75%);
+            background-size: 60px 60px;
+            background-position: 0 0, 0 0;
+            background-color: #f0f0f0;
+            width: 100%;
+            box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .card:hover {
+            background-position: -100px 100px, -100px 100px;
+            transform: rotate3d(0.5, 1, 0, 25deg);
+        }
+
+        .content-box {
+            background: rgba(4, 131, 250, 0.74);
+            transition: all 0.5s ease-in-out;
+            padding: 40px 20px 20px 20px;
+            transform-style: preserve-3d;
+        }
+
+        .content-box .card-title {
+            display: inline-block;
+            color: white;
+            font-size: 16px;
+            font-weight: 900;
+            transition: all 0.5s ease-in-out;
+            transform: translate3d(0px, 0px, 50px);
+        }
+
+        @media (max-width: 480px) {
+            .content-box .card-title {
+                font-size: 14px;
+            }
+        }
+
+        .content-box .card-title:hover {
+            transform: translate3d(0px, 0px, 50px);
+        }
+
+        .content-box .card-content {
+            margin-top: 10px;
+            font-size: 9px;
+            font-weight: 700;
+            color: #f2f2f2;
+            transition: all 0.5s ease-in-out;
+            transform: translate3d(0px, 0px, 30px);
+        }
+
+        .content-box .card-content:hover {
+            transform: translate3d(0px, 0px, 50px);
+        }
+
+        .date-box {
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            top: 5px;
+            right: 10px;
+            background: white;
+            border: 1px solid rgb(7, 185, 255);
+            padding: 5px;
+            transform: translate3d(0px, 0px, 80px);
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+        }
+
+        .date-box span {
+            display: block;
+            text-align: center;
+        }
+
+        .date-box .month {
+            color: rgb(4, 193, 250);
+            font-size: 8px;
+            font-weight: 700;
+        }
+
+        .date-box .date {
+            font-size: 15px;
+            font-weight: 900;
+            color: rgb(0,191,255);
+        }
+
+        @media (max-width: 768px) {
+            .form {
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 22px;
+            }
+            
+            .message {
+                font-size: 12px;
+            }
+            
+            .form label .input {
+                padding: 16px 10px 8px;
+                font-size: 14px;
+            }
+            
+            .form label span {
+                font-size: 12px;
+            }
+            
+            .submit {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+
+        @media (hover: none) {
+            .card:hover {
+                transform: rotate3d(0.5, 1, 0, 15deg);
+            }
+            
+            .content-box .card-title:hover,
+            .content-box .card-content:hover,
+            .content-box .see-more:hover {
+                transform: translate3d(0px, 0px, 30px);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="heading-container">
-        <i class="fas fa-bolt"></i> <!-- Icon of choice -->
-        <h1>Electricity Bill Prediction</h1>
+<div class="container2"></div>
+<button class="btn-donate">Electricity Bill Prediction</button>
+
+<form method="post" class="form" onsubmit="return validatePassword()">
+    <p class="title"><i class="fas fa-user-plus"></i> Create an Account</p>
+    <p class="message">Signup now and start your journey with us.</p>
+
+    {% csrf_token %}
+    {% if error %}
+        <div class="error-message">{{ error }}</div>
+    {% endif %}
+
+    <div class="flex">
+        <label>
+            <input class="input" type="text" name="first_name" required>
+            <span>First Name</span>
+        </label>
+
+        <label>
+            <input class="input" type="text" name="last_name">
+            <span>Last Name (Optional)</span>
+        </label>
     </div>
-    <div class="form-container">
-        <h2><i class="fas fa-user-plus"></i> Create an Account</h2>
 
-        <!-- Error message -->
-        {% if error %}
-          <div class="error-message">{{ error }}</div>
-        {% endif %}
+    <label>
+        <input class="input" type="text" name="username" required>
+        <span>Username</span>
+    </label>
 
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="username" hidden>Username</label>
-                <i class="fas fa-user"></i>
-                <input type="text" name="username" id="username" placeholder="Username" required>
-            </div>
-            <div class="form-group">
-                <label for="email" hidden>Email (Optional)</label>
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="email" id="email" placeholder="Email (Optional)">
-            </div>
-            <div class="form-group">
-                <label for="password" hidden>Password</label>
-                <i class="fas fa-lock"></i>
-                <input type="password" name="password" id="password" placeholder="Password" required>
-            </div>
-            
-            <input type="submit" value="Sign Up">
-        </form>
+    <label>
+        <input class="input" type="email" name="email">
+        <span>Email (Optional)</span>
+    </label>
 
-        <!-- Redirect to login page -->
-        <p class="form-footer">Have an account? <a href="{% url 'login' %}">Log in here</a></p>
-    </div>
+    <label>
+        <input class="input" type="password" name="password" id="password" required>
+        <span>Password</span>
+    </label>
+
+    <label>
+        <input class="input" type="password" id="confirm_password" required>
+        <span>Confirm Password</span>
+    </label>
+
+    <button type="submit" class="submit">Sign Up</button>
+
+    <p class="signin">Already have an account? <a href="{% url 'login' %}">Log in here</a></p>
+</form>
+
+<script>
+    function validatePassword() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm_password").value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return false;
+        }
+        return true;
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        let today = new Date();
+        let monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUNE", "JULY", "AUG", "SEPT", "OCT", "NOV", "DEC"];
+        
+        document.getElementById("month").textContent = monthNames[today.getMonth()];
+        document.getElementById("date").textContent = today.getDate();
+    }); 
+</script>
 </body>
 </html>

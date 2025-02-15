@@ -1,96 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Setup - Energy Consumption Analyzer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        body {
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .container2 {
+            width: 100%;
+            height: 100%;
+            --s: 200px;
+            --c1: #1d1d1d;
+            --c2: #4e4f51;
+            --c3: #3c3c3c;
+            background: repeating-conic-gradient(
+                    from 30deg,
+                    #0000 0 120deg,
+                    var(--c3) 0 180deg
+            )
+            calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+            repeating-conic-gradient(
+                    from 30deg,
+                    var(--c1) 0 60deg,
+                    var(--c2) 0 120deg,
+                    var(--c3) 0 180deg
+            );
+            background-size: var(--s) calc(var(--s) * 0.577);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgb(252, 252, 252);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+        
+        .scrollable-container {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .scrollable-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .scrollable-container::-webkit-scrollbar-thumb {
+            background: #4299e1;
+            border-radius: 10px;
+        }
+        
+        .scrollable-container::-webkit-scrollbar-thumb:hover {
+            background: #3182ce;
+        }
+        
+        /* Track */
+        .scrollable-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body class="bg-gradient-to-r from-blue-500 to-blue-300">
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold mb-6">Welcome, {{ username }}!</h1>
-        
-        {% if error %}
-        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-            {{ error }}
-        </div>
-        {% endif %}
+    <div class="container2"></div>
+    
+    <div class="content-wrapper">
+        <div class="container mx-auto px-4 py-8 pb-16">
+            <h1 class="text-3xl font-bold mb-6">Welcome, {{ username }}!</h1>
+            
+            {% if error %}
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                {{ error }}
+            </div>
+            {% endif %}
 
-        <form method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            {% csrf_token %}
-            <div id="appliance-fields">
-                <div class="appliance-field mb-6">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <!-- Appliance Type Dropdown -->
-                        <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Appliance Type</label>
-                            <select name="appliance_type" onchange="updateModelOptions(this)" class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none">
-                                <option value="">Select Appliance Type</option>
-                                {% for type in appliance_types %}
-                                    <option value="{{ type }}">{{ type }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        
-                        <!-- Model (Auto-Suggested Dropdown) -->
-                        <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Model</label>
-                            <input type="text" name="appliance_name" list="model-list" oninput="updateWattage(this)" class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none">
-                            <datalist id="model-list"></datalist>
-                        </div>
+            <form method="POST" class="bg-white shadow-md rounded px-4 sm:px-8 pt-6 pb-8 mb-4">
+                {% csrf_token %}
+                <div id="appliance-fields" class="scrollable-container mb-4">
+                    <div class="appliance-field mb-6">
+                        <div class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2">Appliance Type</label>
+                                <select name="appliance_type" onchange="updateModelOptions(this)" class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none">
+                                    <option value="">Select Appliance Type</option>
+                                    {% for type in appliance_types %}
+                                        <option value="{{ type }}">{{ type }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2">Model</label>
+                                <input type="text" name="appliance_name" list="model-list" oninput="updateWattage(this)" class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none">
+                                <datalist id="model-list"></datalist>
+                            </div>
 
-                        <!-- Wattage Field (Auto-Filled) -->
-                        <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Wattage</label>
-                            <input type="number" name="wattage" readonly class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2">Wattage</label>
+                                <input type="number" name="wattage" readonly class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="flex items-center justify-between mt-6">
-                <button type="button" onclick="addApplianceField()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                    Add Another Appliance
-                </button>
-                <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                    Complete Setup
-                </button>
-            </div>
-        </form>
-        {% if appliances %}
-<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mt-8">
-    <h2 class="text-xl font-bold mb-4">Your Appliances</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {% for appliance in appliances %}
-        <div class="bg-gray-50 p-4 rounded relative flex flex-col justify-between">
-            <form method="POST" action="{% url 'setup_view' %}" class="absolute top-2 right-2">
-                {% csrf_token %}
-                <input type="hidden" name="delete_appliance_name" value="{{ appliance.name }}">
-                <input type="hidden" name="delete_appliance_type" value="{{ appliance.type }}">
-                <button type="submit" class="text-gray-500 hover:text-red-500 focus:outline-none">
-                    <!-- Delete icon (X or trash can) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+                <div class="flex flex-col sm:flex-row items-center justify-between mt-6 gap-4">
+                    <button type="button" onclick="addApplianceField()" class="w-full sm:w-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Add Another Appliance
+                    </button>
+                    <button type="submit" class="w-full sm:w-auto bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Complete Setup
+                    </button>
+                </div>
             </form>
-            <div>
-                <p class="font-bold">{{ appliance.name }}</p>
-                <p>Type: {{ appliance.type }}</p>
-                <p>Wattage: {{ appliance.wattage }}</p>
+            
+            {% if appliances %}
+            <div class="bg-white shadow-md rounded px-4 sm:px-8 pt-6 pb-8 mt-8 mb-16">
+                <h2 class="text-xl font-bold mb-4">Your Appliances</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {% for appliance in appliances %}
+                    <div class="bg-gray-50 p-4 rounded relative flex flex-col justify-between">
+                        <form method="POST" action="{% url 'setup_view' %}" class="absolute top-2 right-2">
+                            {% csrf_token %}
+                            <input type="hidden" name="delete_appliance_name" value="{{ appliance.name }}">
+                            <input type="hidden" name="delete_appliance_type" value="{{ appliance.type }}">
+                            <button type="submit" class="text-gray-500 hover:text-red-500 focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </form>
+                        <div>
+                            <p class="font-bold">{{ appliance.name }}</p>
+                            <p>Type: {{ appliance.type }}</p>
+                            <p>Wattage: {{ appliance.wattage }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
+            {% endif %}
         </div>
-        {% endfor %}
-    </div>
-</div>
-{% endif %}
-
     </div>
 
     <script>
         const applianceData = {{ appliance_data|safe }};
-
+        
         function updateModelOptions(selectElement) {
+            const modelList = selectElement.closest('.appliance-field').querySelector('datalist');
             const type = selectElement.value;
-            const modelList = document.getElementById("model-list");
             modelList.innerHTML = '';
 
             applianceData.forEach(appliance => {
@@ -104,7 +192,7 @@
 
         function updateWattage(inputElement) {
             const model = inputElement.value;
-            const wattageInput = inputElement.closest('.grid').querySelector('input[name="wattage"]');
+            const wattageInput = inputElement.closest('.appliance-field').querySelector('input[name="wattage"]');
             
             const appliance = applianceData.find(appl => appl["Model"] === model);
             if (appliance) {
@@ -116,7 +204,18 @@
             const template = document.querySelector('.appliance-field').cloneNode(true);
             template.querySelectorAll('input').forEach(input => input.value = '');
             template.querySelectorAll('select').forEach(select => select.selectedIndex = 0);
+            
+            const newDatalistId = 'model-list-' + Date.now();
+            const datalist = template.querySelector('datalist');
+            datalist.id = newDatalistId;
+            
+            const input = template.querySelector('input[list]');
+            input.setAttribute('list', newDatalistId);
+            
             document.getElementById('appliance-fields').appendChild(template);
+            
+            const container = document.getElementById('appliance-fields');
+            container.scrollTop = container.scrollHeight;
         }
     </script>
 </body>
